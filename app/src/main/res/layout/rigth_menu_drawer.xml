@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.apc.colnodo.piensaentic.MenuDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrimInsetsFrameLayout"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@android:color/white"
+    android:elevation="10dp"
+    android:fitsSystemWindows="false"
+    app:insetsForeground="#4000"
+    tools:showIn="@layout/home">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_ly_content_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+        </FrameLayout>
+
+    </ScrollView>
+
+
+</org.apc.colnodo.piensaentic.MenuDrawer>
