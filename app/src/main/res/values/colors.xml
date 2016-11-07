@@ -9,6 +9,7 @@
     <color name="blue_active_pager">#123159</color>
     <color name="blue_inactive_pager">#237e99</color>
     <color name="blue_dark_activity_text">#123159</color>
-    <color name="transparent">#00ff0000</color>
+    <color name="blue_action_bar">#41bbd1</color>
+    <color name="transparent">#00ffffff</color>
 
 </resources>

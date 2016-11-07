@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="activity_name_list">
+        <item>SOBRE MI</item>
+        <item>CREA UNA CLAVE SEGURA</item>
+        <item>ACTIVIDAD 3</item>
+    </string-array>
+
+    <string-array name="activity_background_list">
+        <item>act1_fondo</item>
+        <item>act1_fondo</item>
+        <item>intro_fondo</item>
+    </string-array>
+
+    <string-array name="activity_pager_list">
+        <item>select_pager_indicator_blue</item>
+        <item>select_pager_indicator_red</item>
+        <item>select_pager_indicator_red</item>
+    </string-array>
+
+    <string-array name="activity_fragment_list">
+        <item>BlankFragment,BlankFragment,BlankFragment</item>
+        <item>BlankFragment,BlankFragment,BlankFragment,BlankFragment</item>
+        <item>BlankFragment,BlankFragment</item>
+    </string-array>
+
+
+
+</resources>

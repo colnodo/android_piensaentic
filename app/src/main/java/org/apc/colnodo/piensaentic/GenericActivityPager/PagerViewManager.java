@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by apple on 11/5/16.
@@ -14,29 +13,29 @@ import java.util.List;
 
 public class PagerViewManager extends FragmentPagerAdapter {
 
-    private ArrayList<Fragment> fragmentList;
-    private int size;
+    private ArrayList<Fragment> mFragmentList;
+    private int mSize;
 
 
     public PagerViewManager(Context ctx, FragmentManager fm, ArrayList<Fragment> fragmentsList) {
         super(fm);
-        fragmentList = fragmentsList;
-        size = fragmentList.size();
+        mFragmentList = fragmentsList;
+        mSize = mFragmentList.size();
     }
 
     @Override
     public Fragment getItem(int pos) {
 
-        if (size > 0) {
-            return fragmentList.get(pos);
-        } else return fragmentList.get(0);
+        if (mSize > 0) {
+            return mFragmentList.get(pos);
+        } else return mFragmentList.get(0);
 
     }
 
     @Override
     public int getCount() {
 
-        return size;
+        return mSize;
 
     }
 }

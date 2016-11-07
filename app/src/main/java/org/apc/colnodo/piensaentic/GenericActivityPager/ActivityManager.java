@@ -1,7 +1,9 @@
 package org.apc.colnodo.piensaentic.GenericActivityPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -12,10 +14,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import org.apc.colnodo.piensaentic.Home;
 import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by apple on 11/5/16.
@@ -89,6 +93,7 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.generic_activity_pager, container, false);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager_activity);
@@ -97,8 +102,17 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
         createPagerIndicators();
         //mViewBackground.setBackground(getResources().getDrawable(mBackground));
         mViewBackground.setBackgroundResource(mBackground);
-        viewPager.setAdapter(new PagerViewManager(this.getActivity(), getChildFragmentManager(), mFragmentList));
-        viewPager.addOnPageChangeListener(this);
+
+        try {
+            viewPager.setAdapter(new PagerViewManager(this.getActivity(), getChildFragmentManager(), mFragmentList));
+            viewPager.addOnPageChangeListener(this);
+        } catch (Exception ea){
+            ea.printStackTrace();
+            Intent intent = new Intent();
+            intent.setClass(this.getActivity(), Home.class);
+            startActivity(intent);
+        }
+
         return view;
     }
 }
