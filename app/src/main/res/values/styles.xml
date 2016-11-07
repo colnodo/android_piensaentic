@@ -1,14 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <!--<item name="windowActionBar">false</item>-->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/blue_action_bar</item>
         <item name="colorPrimaryDark">@color/orange_inactive_pager</item>
         <item name="colorAccent">@color/orange_inactive_pager</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <!--<item name="windowNoTitle">true</item>-->
     </style>
 
 

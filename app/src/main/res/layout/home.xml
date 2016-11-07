@@ -3,29 +3,49 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_below="@+id/toolbar"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
-            android:id="@+id/ly_content_home"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:id="@+id/ly_right_menu_container">
 
-        </FrameLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/hamburguesa"
+                android:id="@+id/iv_hamburguesa"
+                android:layout_margin="10dp"/>
 
-        <include layout="@layout/rigth_menu_drawer"/>
+        </LinearLayout>
 
-    </android.support.v4.widget.DrawerLayout>
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <!-- Replace the default action bar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_width="match_parent"
-        android:elevation="5dp"
-        android:background="@color/blue_action_bar"/>
+            <FrameLayout
+                android:id="@+id/ly_content_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+            </FrameLayout>
+
+            <include layout="@layout/rigth_menu_drawer"/>
+
+        </android.support.v4.widget.DrawerLayout>
+    </FrameLayout>
+
+    <!--&lt;!&ndash; Replace the default action bar &ndash;&gt;-->
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:elevation="5dp"-->
+        <!--android:background="@color/blue_action_bar"/>-->
 
 </RelativeLayout>
