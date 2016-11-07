@@ -3,4 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aboutme_name_tittle">Escribe tu nombre</string>
+    <string name="aboutme_name_hint">Nombre</string>
+    <string name="aboutme_nick_name_tittle">Tu nombre de súper heroína/héroe es:</string>
+    <string name="aboutme_nick_name_hint">Súper</string>
+    <string name="aboutme_birthdate_tittle">Naciste en:</string>
+    <string name="aboutme_birthdate_hint">dd-mm-yyyy</string>
+    <string name="aboutme_email_tittle">Tu correo electronico es:</string>
+    <string name="aboutme_email_hint">Email</string>
+
 </resources>

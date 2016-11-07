@@ -98,7 +98,7 @@ public class ActivitiesIndex {
         for (String fragmentName : separated){
             try {
                 Class<?> act = Class.forName("org.apc.colnodo.piensaentic.Activities." + fragmentName);
-                Constructor<?> ctor = act.getConstructor(String.class);
+                Constructor<?> ctor = act.getConstructor();
                 Object object = ctor.newInstance(new Objects[]{});
                 Fragment fragment = (Fragment) object;
                 list.add(fragment);

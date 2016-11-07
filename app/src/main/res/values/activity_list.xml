@@ -19,11 +19,9 @@
     </string-array>
 
     <string-array name="activity_fragment_list">
-        <item>BlankFragment,BlankFragment,BlankFragment</item>
+        <item>AboutMe.AboutMeOne,AboutMe.AboutMeOne,AboutMe.AboutMeOne</item>
         <item>BlankFragment,BlankFragment,BlankFragment,BlankFragment</item>
         <item>BlankFragment,BlankFragment</item>
     </string-array>
-
-
 
 </resources>

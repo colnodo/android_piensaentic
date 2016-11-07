@@ -4,7 +4,7 @@
     <!--<item name="windowActionBar">false</item>-->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@null</item>
+        <item name="colorPrimary">@color/blue_action_bar</item>
         <item name="colorPrimaryDark">@color/orange_inactive_pager</item>
         <item name="colorAccent">@color/orange_inactive_pager</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -39,5 +39,22 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="ActivityInnerTextFieldTittle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/blue_dark_activity_text</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily"
+            tools:ignore="NewApi">roboto_condensed_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">7dp</item>
 
+    </style>
+
+    <style name="ActivityInnerTextFieldEditable" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textStyle">normal</item>
+        <item name="android:background">@drawable/line_edit_text</item>
+    </style>
 </resources>
