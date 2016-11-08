@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:text="@string/dialog_treatment_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        style="@style/ActivityInnerTextFieldTittleTiny"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pantalla_05_boton_acepto"
+        android:id="@+id/iv_treatmen_accept"
+        android:layout_marginBottom="25dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pantalla_05_boton_no_acepto"
+        android:id="@+id/iv_treatmen_no_accept"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:text="@string/dialog_treatment_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="15sp"
+        style="@style/ActivityInnerTextFieldTittleTiny"/>
+</LinearLayout>

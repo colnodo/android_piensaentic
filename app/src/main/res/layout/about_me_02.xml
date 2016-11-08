@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fl_circle_text_about2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_06_circulo2"
+                android:id="@+id/iv_background_circle_about2" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:text="Nombre Apellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_name_about2"
+                    style="@style/ActivityInnerTextFieldTittleBiggerBold"/>
+
+                <TextView
+                    android:text="@string/aboutme2_nick_name_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_nick_name_tittle_about2"
+                    style="@style/ActivityInnerTextFieldTittleTiny"/>
+
+                <TextView
+                    android:text="APODO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_nick_name_about2"
+                    android:textSize="25dp"
+                    style="@style/ActivityInnerTextFieldTittleBiggerBold"/>
+
+                <TextView
+                    android:text="naciste el dia del mes del año"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/tv_birthdate_tittle_about2"
+                    style="@style/ActivityInnerTextFieldTittle"/>
+
+                <TextView
+                    android:text="@string/aboutme2_email_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_mail_tittle_about2"
+                    style="@style/ActivityInnerTextFieldTittleTiny"/>
+
+                <TextView
+                    android:text="correo@correo.com"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_mail_about2"
+                    style="@style/ActivityInnerTextFieldTittle"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pantalla_06_boton_protejamos"
+            android:id="@+id/iv_protect_your_inf_about2"
+            android:layout_below="@+id/fl_circle_text_about2"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</FrameLayout>

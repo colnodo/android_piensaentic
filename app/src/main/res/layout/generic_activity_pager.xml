@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="30dp">
 
-        <android.support.v4.view.ViewPager
+        <org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager
             android:id="@+id/viewPager_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

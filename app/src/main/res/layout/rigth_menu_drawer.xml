@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.apc.colnodo.piensaentic.MenuDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+<org.apc.colnodo.piensaentic.IndexManagement.MenuDrawer xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrimInsetsFrameLayout"
@@ -28,4 +28,4 @@
     </ScrollView>
 
 
-</org.apc.colnodo.piensaentic.MenuDrawer>
+</org.apc.colnodo.piensaentic.IndexManagement.MenuDrawer>

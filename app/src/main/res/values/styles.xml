@@ -53,4 +53,18 @@
         <item name="android:textStyle">normal</item>
         <item name="android:background">@drawable/line_edit_text</item>
     </style>
+
+    <style name="ActivityInnerTextFieldTittleBold" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActivityInnerTextFieldTittleTiny" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ActivityInnerTextFieldTittleBiggerBold" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

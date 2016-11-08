@@ -1,18 +1,24 @@
-package org.apc.colnodo.piensaentic;
+package org.apc.colnodo.piensaentic.IndexManagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import org.apc.colnodo.piensaentic.Activities.AboutMe.AboutMeOne;
 import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
-import org.apc.colnodo.piensaentic.IndexManagement.ActivitiesIndex;
-import org.apc.colnodo.piensaentic.IndexManagement.RightMenuFragment;
+import org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager;
+import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +27,20 @@ import java.util.List;
  * Created by apple on 11/5/16.
  */
 
-public class Home extends AppCompatActivity implements View.OnClickListener, RightMenuFragment.OnOptionRightMenuClicked{
+public class Home extends AppCompatActivity implements View.OnClickListener,
+        RightMenuFragment.OnOptionRightMenuClicked, AboutMeOne.fragmentValidations, CustomViewPager.OnPageChangeListener {
 
 
+    private String TAG = this.getClass().getSimpleName();
     private DrawerLayout mRightMenu;
     private ImageView mIbMenu;
     private LinearLayout mLyMenuContainer;
     private ActivitiesIndex mIndex = new ActivitiesIndex();
     private List<String> activitiesList = new ArrayList();
+    private ActivityManager mActualFragment;
+    private CustomViewPager mViewPager;
+
+    private boolean mAllowedToContinue = true;
 
 
     @Override
@@ -50,6 +62,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Rig
         activitiesList = mIndex.getActivitiesList();
         Fragment rightMenu = RightMenuFragment.newInstance(activitiesList);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_ly_content_profile, rightMenu).commit();
+
     }
 
 
@@ -65,10 +78,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Rig
 
     private void startActivity(int activity_number){
         ActivitiesIndex.Activity activityActual = mIndex.getActivity(activity_number);
-        ActivityManager actualFragment = new ActivityManager();
-        actualFragment.setArguments(activityActual.mFragments, activityActual.mActivity_name,
+        mActualFragment = new ActivityManager();
+        mActualFragment.setArguments(activityActual.mFragments, activityActual.mActivity_name,
                 activityActual.mBackground_id, activityActual.mPager_indicator_id);
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content_home, actualFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content_home, mActualFragment).commit();
     }
 
 
@@ -84,8 +97,44 @@ public class Home extends AppCompatActivity implements View.OnClickListener, Rig
                 break;
             default:
                 break;
-
         }
+    }
 
+    @Override
+    public void isAllowedToContinue(boolean mAllowedToContinue) {
+        this.mAllowedToContinue = mAllowedToContinue;
+        Log.d(TAG, "AllowedToContinueSetted: " + this.mAllowedToContinue);
+        mViewPager = mActualFragment.mViewPager;
+        mViewPager.setPagingEnabled(this.mAllowedToContinue);
+        mViewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+        switch (state) {
+            case ViewPager.SCROLL_STATE_DRAGGING:
+                Log.d(TAG, "Dragging Started");
+                if (!mAllowedToContinue){
+                    Toast.makeText(this, R.string.fields_required_missing, Toast.LENGTH_LONG).show();
+                }
+                break;
+            case ViewPager.SCROLL_STATE_IDLE:
+                break;
+            case ViewPager.SCROLL_STATE_SETTLING:
+                break;
+            default:
+                break;
+        }
     }
 }

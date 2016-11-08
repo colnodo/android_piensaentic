@@ -1,4 +1,4 @@
-package org.apc.colnodo.piensaentic;
+package org.apc.colnodo.piensaentic.IndexManagement;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -3,10 +3,7 @@ package org.apc.colnodo.piensaentic.GenericActivityPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ShareCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +11,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
-import org.apc.colnodo.piensaentic.Home;
+import org.apc.colnodo.piensaentic.IndexManagement.Home;
 import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by apple on 11/5/16.
@@ -27,7 +22,7 @@ import java.util.concurrent.ExecutionException;
  * a pager view, a pager adapter, a pager indicator.
  */
 
-public class ActivityManager extends Fragment implements ViewPager.OnPageChangeListener{
+public class ActivityManager extends Fragment implements ViewPager.OnPageChangeListener {
 
     private RadioGroup mRadioGroup;
     private ArrayList<Fragment> mFragmentList;
@@ -36,11 +31,14 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
     private int mPagerIndicator;
     private String mActivityName;
     private RelativeLayout mViewBackground;
-    private ViewPager viewPager;
+    public CustomViewPager mViewPager;
     private int mPagerIndicatorsSpace;
+    private boolean mAllowedToContinue = true;
+
 
 
     public ActivityManager(){
+
     }
 
 
@@ -53,17 +51,12 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mPagerIndicatorsSpace = (int) getResources().getDimension(R.dimen.padding_left_page_indicator);
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
 
     private void createPagerIndicators(){
         for (int i = 0; i< mSize; i++){
@@ -80,6 +73,11 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
         }
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
 
     public void onPageSelected(int position) {
         mRadioGroup.check(position);
@@ -93,26 +91,24 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.generic_activity_pager, container, false);
-        viewPager = (ViewPager) view.findViewById(R.id.viewPager_activity);
+        mViewPager = (CustomViewPager) view.findViewById(R.id.viewPager_activity);
         mViewBackground = (RelativeLayout)view.findViewById(R.id.generic_activity_background);
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radiogroup);
         createPagerIndicators();
-        //mViewBackground.setBackground(getResources().getDrawable(mBackground));
         mViewBackground.setBackgroundResource(mBackground);
 
         try {
-            viewPager.setAdapter(new PagerViewManager(this.getActivity(), getChildFragmentManager(), mFragmentList));
-            viewPager.addOnPageChangeListener(this);
+            mViewPager.setAdapter(new PagerViewManager(this.getActivity(), getChildFragmentManager(), mFragmentList));
+            mViewPager.addOnPageChangeListener(this);
         } catch (Exception ea){
             ea.printStackTrace();
             Intent intent = new Intent();
             intent.setClass(this.getActivity(), Home.class);
             startActivity(intent);
         }
-
         return view;
     }
+
 }

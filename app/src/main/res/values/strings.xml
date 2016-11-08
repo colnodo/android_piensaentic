@@ -11,5 +11,16 @@
     <string name="aboutme_birthdate_hint">dd-mm-yyyy</string>
     <string name="aboutme_email_tittle">Tu correo electronico es:</string>
     <string name="aboutme_email_hint">Email</string>
+    <string name="aboutme2_nick_name_tittle">de ahora en adelante serás</string>
+    <string name="aboutme2_email_tittle">tu correo electrónico es</string>
+    <string name="aboutme2_birthdate_tittle">naciste el %1$s de %2$s de %3$s</string>
+    <string name="dialog_treatment_tittle">Colnodo respeta los derechos \n
+        sobre el manejo de tus datos \n
+        personales, por favor lee y \n
+        acepta los Términos y \n
+        Condiciones para continuar.</string>
+    <string name="dialog_treatment_note">* En caso de no aceptar no podrás \n
+        seguir usando la aplicacion</string>
+    <string name="fields_required_missing">Aún te faltan campos por diligenciar</string>
 
 </resources>
