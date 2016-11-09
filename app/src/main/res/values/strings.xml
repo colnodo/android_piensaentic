@@ -3,6 +3,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Contraseña:</string>
+    <string name="password_dummy">Mshtscnell</string>
+    <string name="password_strong">Contraseña súper segura:</string>
+    <string name="password_dummy_strong">M5ht5cne11</string>
     <string name="aboutme_name_tittle">Escribe tu nombre</string>
     <string name="aboutme_name_hint">Nombre</string>
     <string name="aboutme_nick_name_tittle">Tu nombre de súper heroína/héroe es:</string>
@@ -14,13 +18,31 @@
     <string name="aboutme2_nick_name_tittle">de ahora en adelante serás</string>
     <string name="aboutme2_email_tittle">tu correo electrónico es</string>
     <string name="aboutme2_birthdate_tittle">naciste el %1$s de %2$s de %3$s</string>
-    <string name="dialog_treatment_tittle">Colnodo respeta los derechos \n
-        sobre el manejo de tus datos \n
-        personales, por favor lee y \n
-        acepta los Términos y \n
-        Condiciones para continuar.</string>
+    <string name="dialog_treatment_tittle">Colnodo respeta los derechos sobre el manejo de tus datos
+        personales, por favor lee y acepta los Términos y Condiciones para continuar.</string>
     <string name="dialog_treatment_note">* En caso de no aceptar no podrás \n
         seguir usando la aplicacion</string>
+    <string name="dialog_create_password_tittle">Crea una contraseña súper segura para proteger tu cuaderno,
+        con ella solo tú podrás editar y ver información privada.</string>
+
+    <string name="activityone_tittle">, piensa en una canción o frase que te guste,
+            por ejemplo esta parte de la canción "Cuando te veo" de Choquibtown</string>
+
+    <string name="activityone2_tittle">Toma las letras iniciales y forma una contraseña súper segura:</string>
+
+    <string name="activityone3_tittle">Si quieres hacerla aún más indescifrable, puedes cambiar algunas letras
+        por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría así:</string>
+
+    <string name="activityone4_tittle">, ¿ya pensaste tu constraseña? Para hacerla súper segura debe tener números, letras
+        y mínimo 6 caracteres </string>
+
+    <string name="activityone5_tittle">Esta contraseña es solo tuya!!! No se la digas a nadie ni la escribas en un papel.
+        Ten en cuenta que vas a usarla siempre que abras la aplicación.</string>
+
+    <string name="activityone4_lets_write">Escríbela</string>
+
+    <string name="activityone4_lets_write_again">Escríbela nuevamente para confirmar</string>
+
     <string name="fields_required_missing">Aún te faltan campos por diligenciar</string>
 
 </resources>

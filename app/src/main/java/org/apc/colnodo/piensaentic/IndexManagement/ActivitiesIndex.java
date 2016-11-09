@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 
 import org.apc.colnodo.piensaentic.Activities.BlankFragment;
 import org.apc.colnodo.piensaentic.R;
+import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -89,6 +90,15 @@ public class ActivitiesIndex {
 
     public Activity getActivity(int index){
         return mIndex.get(index);
+    }
+
+    public int getNextActivity(){
+        for(int i = 0; i < mActivitiesTittles.size(); i++){
+            if(!UtilsFunctions.getSharedBoolean(mContext, mActivitiesTittles.get(i))){
+                return i;
+            }
+        }
+        return -1;
     }
 
 

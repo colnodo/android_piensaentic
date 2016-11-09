@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -14,21 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.apc.colnodo.piensaentic.Activities.BlankFragment;
-import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
-import java.lang.reflect.Constructor;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,7 +29,7 @@ import java.util.regex.Pattern;
  * Created by apple on 11/6/16.
  */
 
-public class AboutMeOne extends Fragment implements View.OnClickListener,
+public class One extends Fragment implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener {
 
     private String TAG = this.getClass().getSimpleName();
@@ -53,12 +45,12 @@ public class AboutMeOne extends Fragment implements View.OnClickListener,
 
     private Context mCtx;
 
-    public AboutMeOne(){
+    public One(){
 
     }
 
-    public static AboutMeOne newInstance() {
-        AboutMeOne fragment = new AboutMeOne();
+    public static One newInstance() {
+        One fragment = new One();
         return fragment;
     }
 
@@ -97,7 +89,19 @@ public class AboutMeOne extends Fragment implements View.OnClickListener,
                 picker.show();
             }
         });
+
+        if (UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NAME)!= null){
+            setFieldsValues();
+        }
         return view;
+    }
+
+    private void setFieldsValues() {
+        mEtName.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NAME));
+        mEtNickname.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NICK_NAME));
+        mEtEmail.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_EMAIL));
+        mTvBirthdate.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_BIRTHDATE));
+        mValidationsListener.isAllowedToContinue(true);
     }
 
     public void onAttach(Context context) {
@@ -136,9 +140,9 @@ public class AboutMeOne extends Fragment implements View.OnClickListener,
 
     private void saveFields() {
         try {
-            mName = mEtName.getText().toString();
-            mNickname = mEtNickname.getText().toString();
-            mEmail = mEtEmail.getText().toString();
+            mName = mEtName.getText().toString().trim();
+            mNickname = mEtNickname.getText().toString().trim();
+            mEmail = mEtEmail.getText().toString().trim();
             mBirthdate = mTvBirthdate.getText().toString();
             UtilsFunctions.saveSharedString(mCtx, LocalConstants.USER_NAME, mName);
             UtilsFunctions.saveSharedString(mCtx, LocalConstants.USER_EMAIL, mEmail);
@@ -162,10 +166,7 @@ public class AboutMeOne extends Fragment implements View.OnClickListener,
 
     private boolean isValidBirthdate(TextView birthdate) {
         String date = birthdate.getText().toString();
-        Pattern pattern = Pattern.compile(LocalConstants.DATE_REGEX, Pattern.CASE_INSENSITIVE);
-        Matcher dateMatcher = pattern.matcher(date);
-        Log.d(TAG, "Is Birthdate: "+ date);
-        return dateMatcher.find();
+        return UtilsFunctions.checkRegEx(date, LocalConstants.DATE_REGEX);
     }
 
     private boolean isEmail(EditText email) {

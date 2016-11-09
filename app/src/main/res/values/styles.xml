@@ -63,7 +63,7 @@
     </style>
 
     <style name="ActivityInnerTextFieldTittleBiggerBold" parent="ActivityInnerTextFieldTittle">
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">35sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 

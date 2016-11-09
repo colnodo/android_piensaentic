@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="@string/activityone4_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password_two_tittle"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                style="@style/ActivityInnerTextFieldTittle"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ly_create_password">
+
+                <TextView
+                    android:text="@string/activityone4_lets_write"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_password_two_note"
+                    android:layout_marginBottom="20dp"
+                    style="@style/ActivityInnerTextFieldTittle"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text=""
+                    android:ems="10"
+                    android:id="@+id/et_password"
+                    style="@style/ActivityInnerTextFieldEditable"/>
+
+                <TextView
+                    android:text="@string/activityone4_lets_write_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_password_two_dummy"
+                    style="@style/ActivityInnerTextFieldTittle"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text=""
+                    android:ems="10"
+                    android:id="@+id/et_password_confirm"
+                    style="@style/ActivityInnerTextFieldEditable"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_11_bot_crea_contrasena"
+                android:id="@+id/im_create_password"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

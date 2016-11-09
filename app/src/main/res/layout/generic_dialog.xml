@@ -11,7 +11,7 @@
         android:text="@string/dialog_treatment_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
+        android:id="@+id/tv_dialog_tittle"
         style="@style/ActivityInnerTextFieldTittleTiny"/>
 
     <ImageView
@@ -32,7 +32,7 @@
         android:text="@string/dialog_treatment_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
+        android:id="@+id/tv_dialog_note"
         android:textSize="15sp"
         style="@style/ActivityInnerTextFieldTittleTiny"/>
 </LinearLayout>

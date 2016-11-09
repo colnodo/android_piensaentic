@@ -1,6 +1,5 @@
 package org.apc.colnodo.piensaentic.Activities.AboutMe;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,25 +16,24 @@ import org.apc.colnodo.piensaentic.Utils.AlertDialog;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
-import java.util.Calendar;
-import java.util.TimeZone;
-
 /**
  * Created by apple on 11/7/16.
  */
 
-public class AboutMeTwo extends Fragment implements View.OnClickListener {
+public class Two extends Fragment implements View.OnClickListener {
 
     private LinearLayout mFullContentSpace;
     private TextView mTvName, mTvNickname, mTvEmail, mTvBirthdate;
+    private ImageView mImViewFinish;
+    private ActivityFinished mIsFinished;
 
 
     private Context mCtx;
 
-    public AboutMeTwo(){}
+    public Two(){}
 
-    public static AboutMeOne newInstance() {
-        AboutMeOne fragment = new AboutMeOne();
+    public static One newInstance() {
+        One fragment = new One();
         return fragment;
     }
 
@@ -55,6 +53,9 @@ public class AboutMeTwo extends Fragment implements View.OnClickListener {
         final View view_content = inflater_content.inflate(R.layout.about_me_02, null, false);
         mFullContentSpace.addView(view_content);
 
+        mImViewFinish = (ImageView) view_content.findViewById(R.id.iv_protect_your_inf_about2);
+        mImViewFinish.setOnClickListener(this);
+
         mTvName = (TextView) mFullContentSpace.findViewById(R.id.tv_name_about2);
         mTvNickname = (TextView) mFullContentSpace.findViewById(R.id.tv_nick_name_about2);
         mTvEmail = (TextView) mFullContentSpace.findViewById(R.id.tv_mail_about2);
@@ -66,6 +67,7 @@ public class AboutMeTwo extends Fragment implements View.OnClickListener {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
+        mIsFinished = (ActivityFinished) mCtx;
     }
 
     @Override
@@ -77,7 +79,7 @@ public class AboutMeTwo extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_protect_your_inf_about2:
-
+                mIsFinished.activityFinish(true);
                 break;
             default:
                 break;
@@ -91,7 +93,7 @@ public class AboutMeTwo extends Fragment implements View.OnClickListener {
         Log.d("Fragment", "Visible: " + isVisibleToUser);
         if (isVisibleToUser) {
             if (!UtilsFunctions.getSharedBoolean(mCtx, LocalConstants.DATA_TREATMENT_ACCEPTED)){
-                AlertDialog dialog = new AlertDialog(mCtx);
+                AlertDialog dialog = new AlertDialog(mCtx, LocalConstants.TREATMENT_DIALOG);
                 dialog.show();
             }
             mTvName.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NAME));
@@ -101,5 +103,9 @@ public class AboutMeTwo extends Fragment implements View.OnClickListener {
             String birthdate = String.format(getResources().getString(R.string.aboutme2_birthdate_tittle), separated[0], separated[1], separated[2]);
             mTvBirthdate.setText(birthdate);
         }
+    }
+
+    public interface ActivityFinished {
+        void activityFinish(boolean isFinished);
     }
 }

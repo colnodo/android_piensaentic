@@ -1,12 +1,10 @@
 package org.apc.colnodo.piensaentic.Utils;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,24 +18,48 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
 
     private final String TAG = this.getClass().getSimpleName();
 
+    private TextView mTvTittle, mTvNote;
     private ImageView mImAccept, mImNoAccept;
     private Context mCtx;
+    private int mType;
 
 
-    public AlertDialog(Context context) {
+    public AlertDialog(Context context, int dialogType) {
         super(context);
         mCtx = context;
+        mType = dialogType;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.data_treatment_dialog);
+        setContentView(R.layout.generic_dialog);
+        setContentType();
+
+    }
+
+    private void setContentType() {
         mImAccept = (ImageView)findViewById(R.id.iv_treatmen_accept);
         mImNoAccept = (ImageView) findViewById(R.id.iv_treatmen_no_accept);
-        mImAccept.setOnClickListener(this);
-        mImNoAccept.setOnClickListener(this);
+        mTvTittle = (TextView)findViewById(R.id.tv_dialog_tittle);
+        mTvNote = (TextView)findViewById(R.id.tv_dialog_note);
+
+        switch (mType){
+            case 1:
+                mImNoAccept.setOnClickListener(this);
+                mImAccept.setOnClickListener(this);
+                break;
+            case 2:
+                mImAccept.setImageResource(R.drawable.pantalla_07_bot_sigue_estos_pasos);
+                mImAccept.setId(R.id.im_generate_pass);
+                mTvTittle.setText(R.string.dialog_create_password_tittle);
+                mImNoAccept.setVisibility(View.GONE);
+                mTvNote.setVisibility(View.GONE);
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -49,9 +71,13 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
                 dismiss();
                 break;
             case R.id.iv_treatmen_no_accept:
+                UtilsFunctions.resetSharedPreferences(mCtx);
                 getOwnerActivity().finish();
                 System.exit(0);
                 break;
+            case R.id.im_generate_pass:
+                UtilsFunctions.saveSharedBoolean(mCtx,LocalConstants.GENERATE_PASSWORD_ACCEPTED, true);
+                dismiss();
             default:
                 break;
         }

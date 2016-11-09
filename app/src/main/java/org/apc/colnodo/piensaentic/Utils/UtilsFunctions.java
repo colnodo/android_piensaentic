@@ -2,6 +2,10 @@ package org.apc.colnodo.piensaentic.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by apple on 11/7/16.
@@ -21,12 +25,23 @@ public abstract class UtilsFunctions {
 
     public static String getSharedString(Context ctx, String key){
         SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCE_CONTIGOAPP, Context.MODE_PRIVATE);
-        return preferences.getString(key, "");
+        return preferences.getString(key, null);
     }
 
     public static boolean getSharedBoolean(Context ctx, String key){
         SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCE_CONTIGOAPP, Context.MODE_PRIVATE);
         return preferences.getBoolean(key, false);
+    }
+
+    public static void resetSharedPreferences(Context ctx){
+        SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCE_CONTIGOAPP, Context.MODE_PRIVATE);
+        preferences.edit().clear().apply();
+    }
+
+    public static boolean checkRegEx(String string, String regEx){
+        Pattern pattern = Pattern.compile(regEx, Pattern.CASE_INSENSITIVE);
+        Matcher dateMatcher = pattern.matcher(string);
+        return dateMatcher.find();
     }
 
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="@string/activityone2_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password_two_tittle"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                style="@style/ActivityInnerTextFieldTittle"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_09_mis_sentimientos"
+                android:id="@+id/im_password2"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="@string/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password_two_note"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                style="@style/ActivityInnerTextFieldTittle"/>
+
+            <TextView
+                android:text="@string/password_dummy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password_two_dummy"
+                style="@style/ActivityInnerTextFieldTittleBiggerBold"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
