@@ -46,7 +46,6 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginTop">7dp</item>
-
     </style>
 
     <style name="ActivityInnerTextFieldEditable" parent="ActivityInnerTextFieldTittle">
@@ -65,6 +64,12 @@
     <style name="ActivityInnerTextFieldTittleBiggerBold" parent="ActivityInnerTextFieldTittle">
         <item name="android:textSize">35sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="ActivityInnerTextFieldTittleWhite" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
 </resources>

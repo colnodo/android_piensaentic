@@ -26,7 +26,7 @@ public class ActivitiesIndex {
     private List<String> mActivitiesPagerIndicators;
     private List<String> mActivitiesBackground;
 
-    public class Activity{
+    public static class Activity{
 
         public Activity(){
 
@@ -44,14 +44,11 @@ public class ActivitiesIndex {
         public String mActivity_name;
         public int mBackground_id;
         public int mPager_indicator_id;
-
     }
 
     public void setActivities(Context ctx){
 
-
         mContext = ctx;
-
 
         mActivitiesTittles = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_name_list));
         mActivitiesFragments = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_fragment_list));
@@ -59,14 +56,15 @@ public class ActivitiesIndex {
         mActivitiesBackground = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_background_list));
 
 
-        for (int i =0; i< mActivitiesTittles.size(); i++){
-            Activity actual = new Activity();
-            actual.mActivity_name = mActivitiesTittles.get(i);
-            actual.mBackground_id = getResourceId(mActivitiesBackground.get(i));
-            actual.mPager_indicator_id = getResourceId(mActivitiesPagerIndicators.get(i));
-            actual.mFragments = getFragments(mActivitiesFragments.get(i));
-            mIndex.add(actual);
-        }
+//        for (int i =0; i< mActivitiesTittles.size(); i++){
+//            Activity actual = new Activity();
+//            actual.mActivity_name = mActivitiesTittles.get(i);
+//            actual.mBackground_id = getResourceId(mActivitiesBackground.get(i));
+//            actual.mPager_indicator_id = getResourceId(mActivitiesPagerIndicators.get(i));
+//            actual.mFragments = getFragments(mActivitiesFragments.get(i));
+//            mIndex.add(actual);
+//        }
+
     }
 
     private ArrayList<Fragment> getFragments(String activitiesFragments) {
@@ -89,7 +87,12 @@ public class ActivitiesIndex {
     }
 
     public Activity getActivity(int index){
-        return mIndex.get(index);
+        Activity actual = new Activity();
+        actual.mActivity_name = mActivitiesTittles.get(index);
+        actual.mBackground_id = getResourceId(mActivitiesBackground.get(index));
+        actual.mPager_indicator_id = getResourceId(mActivitiesPagerIndicators.get(index));
+        actual.mFragments = getFragments(mActivitiesFragments.get(index));
+        return actual;
     }
 
     public int getNextActivity(){
@@ -109,8 +112,8 @@ public class ActivitiesIndex {
 
     public List<String> getActivitiesList(){
         List<String> list = new ArrayList<>();
-        for(int i = 0 ; i< mIndex.size() ; i++){
-            list.add(mIndex.get(i).mActivity_name);
+        for(int i = 0 ; i< mActivitiesTittles.size() ; i++){
+            list.add(mActivitiesTittles.get(i));
         }
         return list;
     }

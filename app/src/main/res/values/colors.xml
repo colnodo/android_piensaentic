@@ -8,6 +8,8 @@
     <color name="red_dark_intro_text">#7d1836</color>
     <color name="blue_active_pager">#123159</color>
     <color name="blue_inactive_pager">#237e99</color>
+    <color name="yellow_active_pager">#faa448</color>
+    <color name="yellow_inactive_pager">#33faa448</color>
     <color name="blue_dark_activity_text">#123159</color>
     <color name="blue_action_bar">#41bbd1</color>
     <color name="transparent">#00ffffff</color>

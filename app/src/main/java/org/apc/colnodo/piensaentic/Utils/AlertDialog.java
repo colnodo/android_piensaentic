@@ -18,7 +18,7 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
 
     private final String TAG = this.getClass().getSimpleName();
 
-    private TextView mTvTittle, mTvNote;
+    public TextView mTvTittle, mTvNote;
     private ImageView mImAccept, mImNoAccept;
     private Context mCtx;
     private int mType;

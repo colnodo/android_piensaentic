@@ -74,6 +74,7 @@ public class Five extends Fragment implements View.OnClickListener{
         return view;
     }
 
+
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;

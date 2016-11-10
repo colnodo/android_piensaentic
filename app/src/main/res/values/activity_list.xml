@@ -3,25 +3,25 @@
     <string-array name="activity_name_list">
         <item>SOBRE MI</item>
         <item>CREA UNA CLAVE SEGURA</item>
-        <item>ACTIVIDAD 3</item>
+        <item>YO EN UNA IMAGEN</item>
     </string-array>
 
     <string-array name="activity_background_list">
         <item>act1_fondo</item>
         <item>act1_fondo</item>
-        <item>intro_fondo</item>
+        <item>act2_fondo</item>
     </string-array>
 
     <string-array name="activity_pager_list">
         <item>select_pager_indicator_blue</item>
         <item>select_pager_indicator_blue</item>
-        <item>select_pager_indicator_red</item>
+        <item>select_pager_indicator_yellow</item>
     </string-array>
 
     <string-array name="activity_fragment_list">
         <item>AboutMe.One,AboutMe.Two</item>
         <item>ActivityOnePassword.One,ActivityOnePassword.Two,ActivityOnePassword.Three,ActivityOnePassword.Four,ActivityOnePassword.Five</item>
-        <item>BlankFragment,BlankFragment</item>
+        <item>ActivityTwoPhoto.One,ActivityTwoPhoto.Two</item>
     </string-array>
 
 </resources>

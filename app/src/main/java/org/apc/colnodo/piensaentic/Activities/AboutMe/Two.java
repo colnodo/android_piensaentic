@@ -52,15 +52,12 @@ public class Two extends Fragment implements View.OnClickListener {
         final LayoutInflater inflater_content = (LayoutInflater) this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View view_content = inflater_content.inflate(R.layout.about_me_02, null, false);
         mFullContentSpace.addView(view_content);
-
         mImViewFinish = (ImageView) view_content.findViewById(R.id.iv_protect_your_inf_about2);
         mImViewFinish.setOnClickListener(this);
-
         mTvName = (TextView) mFullContentSpace.findViewById(R.id.tv_name_about2);
         mTvNickname = (TextView) mFullContentSpace.findViewById(R.id.tv_nick_name_about2);
         mTvEmail = (TextView) mFullContentSpace.findViewById(R.id.tv_mail_about2);
         mTvBirthdate = (TextView) mFullContentSpace.findViewById(R.id.tv_birthdate_tittle_about2);
-
         return view;
     }
 
@@ -68,6 +65,15 @@ public class Two extends Fragment implements View.OnClickListener {
         super.onAttach(context);
         mCtx = context;
         mIsFinished = (ActivityFinished) mCtx;
+    }
+
+    private void setFields(){
+        mTvName.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NAME));
+        mTvNickname.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NICK_NAME).toUpperCase());
+        mTvEmail.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_EMAIL));
+        String[] separated = UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_BIRTHDATE).split("-");
+        String birthdate = String.format(getResources().getString(R.string.aboutme2_birthdate_tittle), separated[0], separated[1], separated[2]);
+        mTvBirthdate.setText(birthdate);
     }
 
     @Override
@@ -96,12 +102,7 @@ public class Two extends Fragment implements View.OnClickListener {
                 AlertDialog dialog = new AlertDialog(mCtx, LocalConstants.TREATMENT_DIALOG);
                 dialog.show();
             }
-            mTvName.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NAME));
-            mTvNickname.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NICK_NAME).toUpperCase());
-            mTvEmail.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_EMAIL));
-            String[] separated = UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_BIRTHDATE).split("-");
-            String birthdate = String.format(getResources().getString(R.string.aboutme2_birthdate_tittle), separated[0], separated[1], separated[2]);
-            mTvBirthdate.setText(birthdate);
+            setFields();
         }
     }
 

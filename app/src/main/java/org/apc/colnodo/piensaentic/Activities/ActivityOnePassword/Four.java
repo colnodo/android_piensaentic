@@ -49,8 +49,6 @@ public class Four extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mValidationsListener.isAllowedToContinue(false);
-
     }
 
 
@@ -77,6 +75,10 @@ public class Four extends Fragment implements View.OnClickListener{
         mImCreatePassword.setImageAlpha(mAlphaButtonOff);
         mImCreatePassword.setClickable(false);
 
+        if(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS)!= null){
+            setFieldsValues();
+        }
+
         return view;
     }
 
@@ -85,6 +87,13 @@ public class Four extends Fragment implements View.OnClickListener{
         mCtx = context;
         mValidationsListener = (One.fragmentValidations) context;
         mActions = (FragmentActivityActions) context;
+    }
+
+
+    private void setFieldsValues() {
+        mEtPassword.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS));
+        mEtPasswordConfirm.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS));
+        validatePassword();
     }
 
     @Override
@@ -117,7 +126,6 @@ public class Four extends Fragment implements View.OnClickListener{
                 mImCreatePassword.setImageAlpha(mAlphaButtonOn);
                 mImCreatePassword.setClickable(true);
                 mImCreatePassword.setOnClickListener(this);
-                //mValidationsListener.isAllowedToContinue(true);
             } else {
                 mImCreatePassword.setImageAlpha(mAlphaButtonOff);
                 mImCreatePassword.setClickable(false);
@@ -133,7 +141,7 @@ public class Four extends Fragment implements View.OnClickListener{
         super.setUserVisibleHint(isVisibleToUser);
         Log.d("Fragment", "Visible: " + isVisibleToUser);
         if (!isVisibleToUser) {
-            //mValidationsListener.isAllowedToContinue(true);
+            validatePassword();
         } else{
             validatePassword();
         }
