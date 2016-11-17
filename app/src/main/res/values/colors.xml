@@ -12,6 +12,9 @@
     <color name="yellow_inactive_pager">#33faa448</color>
     <color name="blue_dark_activity_text">#123159</color>
     <color name="blue_action_bar">#41bbd1</color>
+    <color name="yellow_pocket_results">#fad648</color>
+    <color name="magenta_inactive_pager">#e0a2b1</color>
     <color name="transparent">#00ffffff</color>
+    <color name="magenta_alpha">#80D83872</color>
 
 </resources>

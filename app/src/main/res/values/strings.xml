@@ -65,5 +65,45 @@
 
     <string name="pick_image_intent_text">Seleccionar fuente de la imagen</string>
 
+    <string name="activitythree1_text">¿Tienes una billetera o cartera donde guardas tus cosas importantes? ¿Qué pasaría si una persona toma y
+        revisa tu cartera? ¿Qué encontraría?</string>
+
+    <string name="activitythree2_ques1">Fotografías de mis amigos</string>
+
+    <string name="activitythree2_ques2">Mis fotografías</string>
+
+    <string name="activitythree2_ques3">Datos de identificación</string>
+
+    <string name="activitythree2_ques4">Teléfonos y datos de contacto de familia y amigos</string>
+
+    <string name="activitythree2_ques5">Dinero o tarjetas de banco (miles de pesos)</string>
+
+    <string name="activitythree2_ques6">¿Qué más tienes?</string>
+
+    <string name="activitythree2_opt1">0 a 5</string>
+    <string name="activitythree2_opt2">Más de 5</string>
+    <string name="activitythree2_opt3">Más de 20</string>
+    <string name="activitythree2_opt4">Más de 100</string>
+
+    <string name="activitythree3_tittle">Ahora imagina que esa persona toma tu teléfono celular ¿Qué encontraría?
+            Revisa!</string>
+
+    <string name="activitythree4_pocket">cartera: </string>
+
+    <string name="activitythree4_phone">teléfono: </string>
+
+    <string name="activitythree5_tittle">Guardas muchas cosas en tu billetera y guardas más en tu celular.
+        Toda esta información es valiosa, ¡protégela! </string>
+
+    <string name="activitythree5_note">Estos consejos prácticos te ayudarán</string>
+
+    <string name="activitythree6_text">Utiliza una constraseña o un patrón para bloquear la pantalla</string>
+    <string name="activitythree7_text">Marca la tarjeta SIM, la tarjeta de memoria, la batería y el teléfono con algo único
+            para darte cuenta si te los han cambiado</string>
+    <string name="activitythree8_text">No guardes información sensible en tu teléfono sin protegerla con una contraseña</string>
+    <string name="activitythree9_text">Conoce el número IMEI de tu teléfono marcando *#06#, así será más fácil rastrearlo si se te pierde
+            o te lo roban</string>
+
+    <string name="activitythree10_text">¡Nunca dejes tu teléfono solo en un lugar público!</string>
 
 </resources>

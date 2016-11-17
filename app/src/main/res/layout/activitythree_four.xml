@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/magenta_alpha"
+            android:layout_marginTop="20dp"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="29dp"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitythree2_ques1"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/activitythree4_pocket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pocket_q1"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                    <TextView
+                        android:text="@string/activitythree4_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone_q1"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitythree2_ques2"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/activitythree4_pocket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pocket_q2"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                    <TextView
+                        android:text="@string/activitythree4_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone_q2"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitythree2_ques3"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/activitythree4_pocket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pocket_q3"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                    <TextView
+                        android:text="@string/activitythree4_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone_q3"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitythree2_ques4"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/activitythree4_pocket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pocket_q4"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                    <TextView
+                        android:text="@string/activitythree4_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone_q4"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitythree2_ques5"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:text="@string/activitythree4_pocket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/pocket_q5"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                    <TextView
+                        android:text="@string/activitythree4_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/phone_q5"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/pantalla21_cajas_texto"
+                        style="@style/ActivityInnerTextFieldTittleResultTag"
+                        android:gravity="left|center_vertical" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pantalla_18_cremallera"
+            android:id="@+id/imageView8" />
+    </FrameLayout>
+</LinearLayout>

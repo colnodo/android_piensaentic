@@ -28,9 +28,9 @@ import java.util.List;
  */
 
 public class Home extends AppCompatActivity implements View.OnClickListener,
-        RightMenuFragment.OnOptionRightMenuClicked, One.fragmentValidations,
+        RightMenuFragment.OnOptionRightMenuClicked,  org.apc.colnodo.piensaentic.Activities.AboutMe.One.fragmentValidations,
         Two.ActivityFinished,CustomViewPager.OnPageChangeListener,
-        Four.FragmentActivityActions {
+        Four.FragmentActivityActions, org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One.HomeLayoutChange{
 
 
     private String TAG = this.getClass().getSimpleName();
@@ -158,5 +158,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
     public void nextFragment() {
         int current = mViewPager.getCurrentItem();
         mViewPager.setCurrentItem(current + 1, true);
+    }
+
+    @Override
+    public void changePagerBackground(int color) {
+        LinearLayout ly = mActualFragment.mLinearLayout;
+        ly.setBackgroundColor(getResources().getColor(color));
     }
 }

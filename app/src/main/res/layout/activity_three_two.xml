@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/magenta_alpha"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                >
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/q1"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activitythree2_ques1"
+                        style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                        />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q1_1"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        style="@style/ActivityInnerTextFieldTittleWhite" />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q1_2"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q1_3"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q1_4"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/q2"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activitythree2_ques2"
+                        style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                        />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q2_1"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q2_2"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q2_3"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q2_4"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/q3"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activitythree2_ques3"
+                        style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                        />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q3_1"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q3_2"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q3_3"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q3_4"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/q4"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activitythree2_ques4"
+                        style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                        />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q4_1"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q4_2"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q4_3"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q4_4"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/q5"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activitythree2_ques5"
+                        style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                        />
+                    <RadioButton
+                        android:text="@string/activitythree2_opt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q5_1"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q5_2"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q5_3"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                    <RadioButton
+                        android:text="@string/activitythree2_opt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_q5_4"
+                        android:layout_weight="1"
+                        style="@style/ActivityInnerTextFieldTittleWhite"/>
+                </RadioGroup>
+
+                <TextView
+                    android:text="@string/activitythree2_ques6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView9"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:lines="4"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/pantalla_20_text_lines"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    android:id="@+id/q6" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pantalla_18_cremallera"
+            android:id="@+id/imageView8" />
+    </FrameLayout>
+</LinearLayout>

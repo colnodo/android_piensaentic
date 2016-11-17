@@ -4,24 +4,30 @@
         <item>SOBRE MI</item>
         <item>CREA UNA CLAVE SEGURA</item>
         <item>YO EN UNA IMAGEN</item>
+        <item>QUÉ HAY EN MI CARTERA</item>
     </string-array>
 
     <string-array name="activity_background_list">
         <item>act1_fondo</item>
         <item>act1_fondo</item>
         <item>act2_fondo</item>
+        <item>act3_fondo</item>
     </string-array>
 
     <string-array name="activity_pager_list">
         <item>select_pager_indicator_blue</item>
         <item>select_pager_indicator_blue</item>
         <item>select_pager_indicator_yellow</item>
+        <item>select_pager_indicator_white</item>
     </string-array>
 
     <string-array name="activity_fragment_list">
         <item>AboutMe.One,AboutMe.Two</item>
         <item>ActivityOnePassword.One,ActivityOnePassword.Two,ActivityOnePassword.Three,ActivityOnePassword.Four,ActivityOnePassword.Five</item>
         <item>ActivityTwoPhoto.One,ActivityTwoPhoto.Two,ActivityTwoPhoto.Three</item>
+        <item>ActivityThreeMyPocket.One,ActivityThreeMyPocket.Two,ActivityThreeMyPocket.Three,ActivityThreeMyPocket.Four,
+            ActivityThreeMyPocket.Five,ActivityThreeMyPocket.Six,ActivityThreeMyPocket.Seven,ActivityThreeMyPocket.Eight,
+            ActivityThreeMyPocket.Nine,ActivityThreeMyPocket.Ten</item>
     </string-array>
 
 </resources>

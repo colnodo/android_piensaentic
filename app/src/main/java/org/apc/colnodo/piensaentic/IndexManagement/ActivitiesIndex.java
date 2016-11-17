@@ -73,7 +73,7 @@ public class ActivitiesIndex {
         String[] separated = CurrentString.split(",");
         for (String fragmentName : separated){
             try {
-                Class<?> act = Class.forName("org.apc.colnodo.piensaentic.Activities." + fragmentName);
+                Class<?> act = Class.forName("org.apc.colnodo.piensaentic.Activities." + fragmentName.trim());
                 Constructor<?> ctor = act.getConstructor();
                 Object object = ctor.newInstance(new Objects[]{});
                 Fragment fragment = (Fragment) object;

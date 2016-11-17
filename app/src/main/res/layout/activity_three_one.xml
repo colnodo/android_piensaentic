@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pantalla_18_titulo"
+        android:id="@+id/imageView6"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@color/magenta_alpha">
+
+            <TextView
+                android:text="@string/activitythree1_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="60dp"
+                android:textSize="23sp"
+                android:id="@+id/textView8"
+                style="@style/ActivityInnerTextFieldTittleWhite"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pantalla_18_cremallera"
+            android:id="@+id/imageView7" />
+
+    </FrameLayout>
+
+</LinearLayout>

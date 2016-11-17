@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="29dp">
 
         <org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager
             android:id="@+id/viewPager_activity"

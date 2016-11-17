@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -31,6 +32,7 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
     private int mPagerIndicator;
     private String mActivityName;
     private RelativeLayout mViewBackground;
+    public static LinearLayout mLinearLayout;
     public CustomViewPager mViewPager;
     private int mPagerIndicatorsSpace;
     private boolean mAllowedToContinue = true;
@@ -95,6 +97,7 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
         View view = inflater.inflate(R.layout.generic_activity_pager, container, false);
         mViewPager = (CustomViewPager) view.findViewById(R.id.viewPager_activity);
         mViewBackground = (RelativeLayout)view.findViewById(R.id.generic_activity_background);
+        mLinearLayout = (LinearLayout)view.findViewById(R.id.linear_layout_radio_button);
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radiogroup);
         createPagerIndicators();
         mViewBackground.setBackgroundResource(mBackground);
@@ -109,6 +112,11 @@ public class ActivityManager extends Fragment implements ViewPager.OnPageChangeL
             startActivity(intent);
         }
         return view;
+    }
+
+
+    public static LinearLayout getPagerLayout(){
+        return mLinearLayout;
     }
 
 }
