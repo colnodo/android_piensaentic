@@ -58,6 +58,10 @@
         la hora, la fecha y lugar dónde la tomaste, e incluso puede tener el nombre o información sobre tu celular o cámara utilizada.
         Estos datos se llaman Metadatos.</string>
 
+    <string name="activitytwo3_tittle">Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:</string>
+
+    <string name="activitytwo3_wikipedia">Wikipedia</string>
+    <string name="activitytwo3_ICANN">ICANN</string>
 
     <string name="pick_image_intent_text">Seleccionar fuente de la imagen</string>
 

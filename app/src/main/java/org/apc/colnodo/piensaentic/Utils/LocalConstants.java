@@ -1,5 +1,11 @@
 package org.apc.colnodo.piensaentic.Utils;
 
+import android.media.ExifInterface;
+import android.support.v4.util.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by apple on 11/7/16.
  */
@@ -36,4 +42,22 @@ public class LocalConstants {
     public static final int TREATMENT_DIALOG = 1;
     public static final int CREATE_PASS_DIALOG = 2;
     public static final int NEEDS_INTERNET_CONECTION = 3;
+    public static final int META_TAG_DIALOG = 4;
+
+
+    //Image MetaTags
+
+    public static final String PHOTO_NAME = "profile.jpg";
+    public static final List<Pair<String, String>> META_TAG_LIST =new ArrayList<Pair<String, String>>() {{
+        add(new Pair<>(ExifInterface.TAG_DATETIME, "Fecha y hora"));
+        add(new Pair<>(ExifInterface.TAG_FLASH,"Flash" ));
+        add(new Pair<>(ExifInterface.TAG_GPS_ALTITUDE, "Altitud"));
+        add(new Pair<>(ExifInterface.TAG_GPS_LATITUDE, "Latitud"));
+        add(new Pair<>(ExifInterface.TAG_GPS_LONGITUDE, "Longitud"));
+        add(new Pair<>(ExifInterface.TAG_IMAGE_LENGTH, "Altura"));
+        add(new Pair<>(ExifInterface.TAG_IMAGE_WIDTH, "Ancho"));
+        add(new Pair<>(ExifInterface.TAG_MODEL, "Modelo"));
+        add(new Pair<>(ExifInterface.TAG_ORIENTATION, "Orientación"));
+        add(new Pair<>(ExifInterface.TAG_WHITE_BALANCE, "Balance de blancos"));
+    }};
 }

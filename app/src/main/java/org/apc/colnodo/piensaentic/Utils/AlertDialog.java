@@ -3,12 +3,21 @@ package org.apc.colnodo.piensaentic.Utils;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.vision.text.Line;
+
 import org.apc.colnodo.piensaentic.R;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.Inflater;
 
 /**
  * Created by apple on 11/7/16.
@@ -22,6 +31,7 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
     private ImageView mImAccept, mImNoAccept;
     private Context mCtx;
     private int mType;
+    public static List<Pair<String, String>> mMetaTagsList = new ArrayList<>();
 
 
     public AlertDialog(Context context, int dialogType) {
@@ -30,13 +40,19 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
         mType = dialogType;
     }
 
+    public AlertDialog(Context context, int dialogType, List<Pair<String, String>> list) {
+        super(context);
+        mCtx = context;
+        mType = dialogType;
+        mMetaTagsList = list;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.generic_dialog);
         setContentType();
-
     }
 
     private void setContentType() {
@@ -46,17 +62,27 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
         mTvNote = (TextView)findViewById(R.id.tv_dialog_note);
 
         switch (mType){
-            case 1:
+            case LocalConstants.TREATMENT_DIALOG:
                 mImNoAccept.setOnClickListener(this);
                 mImAccept.setOnClickListener(this);
                 break;
-            case 2:
+            case LocalConstants.CREATE_PASS_DIALOG:
                 mImAccept.setImageResource(R.drawable.pantalla_07_bot_sigue_estos_pasos);
                 mImAccept.setId(R.id.im_generate_pass);
                 mTvTittle.setText(R.string.dialog_create_password_tittle);
                 mImNoAccept.setVisibility(View.GONE);
                 mTvNote.setVisibility(View.GONE);
                 break;
+            case LocalConstants.META_TAG_DIALOG:
+                LinearLayout content = (LinearLayout) findViewById(R.id.dialog_ly_full_content);
+                content.removeAllViews();
+                for (Pair<String,String> pair : mMetaTagsList) {
+                    final LayoutInflater inflater_content = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    final View view_content = inflater_content.inflate(R.layout.meta_tag_item, null, false);
+                    content.addView(view_content);
+                    TextView tv = (TextView) view_content.findViewById(R.id.tv_meta_item);
+                    tv.setText(pair.first + ": " + pair.second);
+                }
             default:
                 break;
         }
@@ -81,5 +107,9 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
             default:
                 break;
         }
+    }
+
+    public static void setMetaTags(){
+
     }
 }

@@ -21,7 +21,7 @@
     <string-array name="activity_fragment_list">
         <item>AboutMe.One,AboutMe.Two</item>
         <item>ActivityOnePassword.One,ActivityOnePassword.Two,ActivityOnePassword.Three,ActivityOnePassword.Four,ActivityOnePassword.Five</item>
-        <item>ActivityTwoPhoto.One,ActivityTwoPhoto.Two</item>
+        <item>ActivityTwoPhoto.One,ActivityTwoPhoto.Two,ActivityTwoPhoto.Three</item>
     </string-array>
 
 </resources>

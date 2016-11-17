@@ -2,10 +2,16 @@ package org.apc.colnodo.piensaentic.Activities.ActivityTwoPhoto;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.provider.OpenableColumns;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +29,9 @@ import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by apple on 11/10/16.
@@ -30,12 +39,17 @@ import java.io.FileNotFoundException;
 
 public class Two extends Fragment implements View.OnClickListener {
 
+    private final String TAG = getClass().getSimpleName();
     private RelativeLayout mFullContentSpace;
     private LinearLayout mLyFullContentSpace;
     private ImageView mIvHeader, mImButton;
     private org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished mIsFinished;
     private Context mCtx;
+    private ExifInterface mMetaData;
     private static final int PICK_IMAGE_ID = 234;
+    private static final int PHOTO_HEIGHT = 288;
+    private static final int PHOTO_WIDTH = 267;
+    private List<Pair<String, String>> mMetaTagsList = new ArrayList<>();
 
     public Two(){}
 
@@ -74,15 +88,24 @@ public class Two extends Fragment implements View.OnClickListener {
 
     private void chargeImage() {
         String path = UtilsFunctions.getSharedString(mCtx, LocalConstants.PHOTO_PATH);
+
         try {
-            File f = new File(path);
-            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+            File file = new File(path);
+            Bitmap src = BitmapFactory.decodeFile(path);
+            int height = src.getHeight();
+            int width = src.getWidth();
+            int side = width;
+            if (height < width){
+                side = height;
+            }
+            Bitmap square = Bitmap.createBitmap(src, 0, 0, side, side);
+            Bitmap b = Bitmap.createScaledBitmap(square, PHOTO_WIDTH, PHOTO_HEIGHT, false);
             ImageView im = (ImageView)mLyFullContentSpace.findViewById(R.id.iv_photo);
             im.setImageBitmap(b);
-
-        }
-        catch (FileNotFoundException e)
-        {
+            mMetaData = new ExifInterface(file.getAbsolutePath());
+            setMetaTagList();
+            Log.d(TAG, "Image Real Path: " + path);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -98,8 +121,8 @@ public class Two extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_activity2_button:
-                Intent chooseImageIntent = PhotoPicker.getPickImageIntent(mCtx);
-                startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
+                AlertDialog dialog = new AlertDialog(mCtx, LocalConstants.META_TAG_DIALOG, mMetaTagsList);
+                dialog.show();
                 break;
         }
     }
@@ -110,6 +133,23 @@ public class Two extends Fragment implements View.OnClickListener {
         Log.d("Fragment", "Visible: " + isVisibleToUser);
         if (isVisibleToUser) {
             chargeImage();
+        }
+    }
+
+
+
+    private void setMetaTagList(){
+        mMetaTagsList.clear();
+        for (int i = 0; i< LocalConstants.META_TAG_LIST.size(); i++){
+            if (mMetaData.getAttribute(LocalConstants.META_TAG_LIST.get(i).first) != null) {
+                try {
+                    mMetaTagsList.add(new Pair<>(LocalConstants.META_TAG_LIST.get(i).second,
+                            mMetaData.getAttribute(LocalConstants.META_TAG_LIST.get(i).first)));
+                } catch (Exception ea) {
+                    ea.printStackTrace();
+                }
+                Log.d(TAG, "MetaTag: " + mMetaTagsList.get(mMetaTagsList.size()-1).first + ": " + mMetaTagsList.get(mMetaTagsList.size()-1).second);
+            }
         }
     }
 

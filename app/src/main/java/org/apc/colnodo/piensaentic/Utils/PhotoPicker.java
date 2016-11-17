@@ -1,4 +1,4 @@
-package org.apc.colnodo.piensaentic.Activities.ActivityTwoPhoto;
+package org.apc.colnodo.piensaentic.Utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,11 +17,15 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import org.apc.colnodo.piensaentic.R;
+import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,30 +106,34 @@ public class PhotoPicker {
     public static String getPathFromResult(Context context, int resultCode,
                                             Intent imageReturnedIntent) {
         Log.d(TAG, "getImageFromResult, resultCode: " + resultCode);
-        //Bitmap bm = null;
+        String imagePath = null;
+        Bitmap bm;
         File imageFile = getTempFile(context);
-        Uri selectedImage = null;
-        String path = null;
+        Uri selectedImage;
         if (resultCode == Activity.RESULT_OK) {
             boolean isCamera = (imageReturnedIntent == null ||
                     imageReturnedIntent.getData() == null  ||
                     imageReturnedIntent.getData().toString().contains(imageFile.toString()));
             if (isCamera) {     /** CAMERA **/
-                //selectedImage = Uri.fromFile(imageFile);
-                path = imageFile.getAbsolutePath();
+//                selectedImage = Uri.fromFile(imageFile);
+//                bm = getImageResized(context, selectedImage);
+//                int rotation = getRotation(context, selectedImage, isCamera);
+//                bm = rotate(bm, rotation);
+//                imagePath = saveToInternalStorage(bm);
+                try {
+                    imagePath = savePhoto(imageFile);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             } else {            /** ALBUM **/
                 selectedImage = imageReturnedIntent.getData();
                 File temFile = new File(selectedImage.getPath());
-                path = temFile.getAbsolutePath();
+                imagePath = getRealPathFromURI(selectedImage);
             }
-            Log.d(TAG, "selectedImage: " + selectedImage);
-
-//            bm = getImageResized(context, selectedImage);
-//            int rotation = getRotation(context, selectedImage, isCamera);
-//            bm = rotate(bm, rotation);
+            Log.d(TAG, "selectedImage: " + imagePath);
         }
         //selectedImage.
-        return path;
+        return imagePath;
     }
 
 
@@ -240,13 +248,12 @@ public class PhotoPicker {
         return bm;
     }
 
-    public String saveToInternalStorage(Bitmap bitmapImage){
+    public static String saveToInternalStorage(Bitmap bitmapImage){
         ContextWrapper cw = new ContextWrapper(mCtx);
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
         // Create imageDir
-        File mypath=new File(directory,"profile.jpg");
-
+        File mypath = new File(directory, LocalConstants.PHOTO_NAME);
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
@@ -261,6 +268,41 @@ public class PhotoPicker {
                 e.printStackTrace();
             }
         }
-        return directory.getAbsolutePath();
+        return directory.getAbsolutePath() + "/" + LocalConstants.PHOTO_NAME;
+    }
+
+    public static String savePhoto(File src) throws IOException{
+        ContextWrapper cw = new ContextWrapper(mCtx);
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        File mypath = new File(directory, LocalConstants.PHOTO_NAME);
+        FileOutputStream fos = new FileOutputStream(mypath);
+        OutputStream out = fos;
+        InputStream in = new FileInputStream(src);
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
+        return directory.getAbsolutePath() + "/" + LocalConstants.PHOTO_NAME;
+    }
+
+    public static String getRealPathFromURI(Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            cursor = mCtx.getContentResolver().query(contentUri,  proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
     }
 }
+
+

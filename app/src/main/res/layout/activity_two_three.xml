@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:text="@string/activitytwo3_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:id="@+id/textView7"
+        style="@style/ActivityInnerTextFieldTittleWhite"/>
+
+    <TextView
+        android:text="@string/activitytwo3_wikipedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView5"
+        android:textStyle="bold"
+        style="@style/ActivityInnerTextFieldTittleWhite"/>
+
+    <TextView
+        android:text="@string/activitytwo3_ICANN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:id="@+id/textView3"
+        style="@style/ActivityInnerTextFieldTittleWhite"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/pantalla_15_fantastico"
+        android:id="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pantalla_15_bot_continuar"
+        android:id="@+id/iv_lets_continue" />
+</LinearLayout>

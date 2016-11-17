@@ -74,11 +74,6 @@ public class Four extends Fragment implements View.OnClickListener{
         mImCreatePassword = (ImageView)mFragmentContentSpace.findViewById(R.id.im_create_password);
         mImCreatePassword.setImageAlpha(mAlphaButtonOff);
         mImCreatePassword.setClickable(false);
-
-        if(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS)!= null){
-            setFieldsValues();
-        }
-
         return view;
     }
 
@@ -87,6 +82,7 @@ public class Four extends Fragment implements View.OnClickListener{
         mCtx = context;
         mValidationsListener = (One.fragmentValidations) context;
         mActions = (FragmentActivityActions) context;
+        mValidationsListener.isAllowedToContinue(true);
     }
 
 
@@ -140,11 +136,18 @@ public class Four extends Fragment implements View.OnClickListener{
     public void setUserVisibleHint(boolean isVisibleToUser){
         super.setUserVisibleHint(isVisibleToUser);
         Log.d("Fragment", "Visible: " + isVisibleToUser);
-        if (!isVisibleToUser) {
-            validatePassword();
-        } else{
-            validatePassword();
-        }
+        if (isVisibleToUser) {
+            if(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS)!= null){
+                setFieldsValues();
+            }
+//            validatePassword();
+        } //else{
+//            try {
+//
+//            } catch (Exception ea){
+//                ea.printStackTrace();
+//            }
+//        }
     }
 
     @Override

@@ -2,7 +2,6 @@ package org.apc.colnodo.piensaentic.Activities.ActivityTwoPhoto;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -13,11 +12,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.cast.framework.media.ImagePicker;
-
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.PhotoPicker;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
 /**
@@ -83,10 +81,10 @@ public class One extends Fragment implements  View.OnClickListener{
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch(requestCode) {
             case PICK_IMAGE_ID:
-                //Bitmap bitmap = PhotoPicker.getImageFromResult(mCtx, resultCode, data);
-                String path = PhotoPicker.getPathFromResult(mCtx,resultCode,data);
-                Log.d("PHOTO_PATH", path);
                 try {
+                    //Bitmap image = PhotoPicker.getImageFromResult(mCtx, resultCode, data);
+                    String path = PhotoPicker.getPathFromResult(mCtx, resultCode, data);
+                    Log.d("PHOTO_PATH", path);
                     if (path != null) {
                         UtilsFunctions.saveSharedString(mCtx, LocalConstants.PHOTO_PATH, path);
                     }

@@ -77,15 +77,17 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
 
     private void startActivity(int activity_number){
         if (activity_number>=0) {
-            ActivitiesIndex.Activity activityActual = mIndex.getActivity(activity_number);
-            mActualFragment = new ActivityManager();
-            mActualFragment.setArguments(activityActual.mFragments, activityActual.mActivity_name,
-                    activityActual.mBackground_id, activityActual.mPager_indicator_id);
-            getSupportFragmentManager().beginTransaction().replace(R.id.ly_content_home, mActualFragment).commit();
-            mActualActivityName = activityActual.mActivity_name;
+
         } else if(activity_number == -1){
+            activity_number = 0;
             //TODO: send the credits activity
         }
+        ActivitiesIndex.Activity activityActual = mIndex.getActivity(activity_number);
+        mActualFragment = new ActivityManager();
+        mActualFragment.setArguments(activityActual.mFragments, activityActual.mActivity_name,
+                activityActual.mBackground_id, activityActual.mPager_indicator_id);
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content_home, mActualFragment).commit();
+        mActualActivityName = activityActual.mActivity_name;
     }
 
 
