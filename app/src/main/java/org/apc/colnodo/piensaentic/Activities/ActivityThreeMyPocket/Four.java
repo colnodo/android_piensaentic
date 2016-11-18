@@ -46,6 +46,7 @@ public class Four extends Fragment {
                              Bundle savedInstanceState) {
         mTvValues = new ArrayList<>();
         mView = inflater.inflate(R.layout.activitythree_four, container, false);
+        mTvValues.clear();
         mTvValues.add((TextView) mView.findViewById(R.id.pocket_q1));
         mTvValues.add((TextView) mView.findViewById(R.id.pocket_q2));
         mTvValues.add((TextView) mView.findViewById(R.id.pocket_q3));

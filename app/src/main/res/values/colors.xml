@@ -14,7 +14,14 @@
     <color name="blue_action_bar">#41bbd1</color>
     <color name="yellow_pocket_results">#fad648</color>
     <color name="magenta_inactive_pager">#e0a2b1</color>
+    <color name="dark_blue_active_pager">#052d33</color>
+    <color name="light_blue_inactive_pager">#038571</color>
+    <color name="blue_sky_active_pager">#00cad9</color>
+    <color name="blue_sky_inactive_pager">#5f998a</color>
     <color name="transparent">#00ffffff</color>
     <color name="magenta_alpha">#80D83872</color>
+
+    00cad9
+
 
 </resources>

@@ -96,11 +96,11 @@ public class Three extends Fragment {
             RadioButton rbChecked = (RadioButton) mView.findViewById(rbCheckedId);
             list.add(rbChecked.getText().toString());
         }
-        if (mEtQuestion6.getText()!= null) {
-            list.add(mEtQuestion6.getText().toString());
-        } else {
-            list.add(" ");
-        }
+//        if (mEtQuestion6.getText()!= null) {
+//            list.add(mEtQuestion6.getText().toString());
+//        } else {
+//            list.add(" ");
+//        }
         return list;
     }
 

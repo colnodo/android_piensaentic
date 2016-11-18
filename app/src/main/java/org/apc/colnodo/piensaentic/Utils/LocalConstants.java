@@ -38,6 +38,14 @@ public class LocalConstants {
     public static final String POCKET_SELECTION = "POCKET_SELECTION";
     public static final String PHONE_SELECTION = "PHONE_SELECTION";
 
+
+    public static final List<String> UNKOWN_CONTACT_FIELDS = new ArrayList<String>(){{
+        add("UNKOWN_CONTACT_NAME_1");
+        add("UNKOWN_CONTACT_NAME_2");
+        add("UNKOWN_CONTACT_NICKNAME_1");
+        add("UNKOWN_CONTACT_NICKNAME_2");
+    }};
+
     //Activities fields
 
 

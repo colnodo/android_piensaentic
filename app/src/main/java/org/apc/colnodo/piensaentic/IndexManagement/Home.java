@@ -30,7 +30,8 @@ import java.util.List;
 public class Home extends AppCompatActivity implements View.OnClickListener,
         RightMenuFragment.OnOptionRightMenuClicked,  org.apc.colnodo.piensaentic.Activities.AboutMe.One.fragmentValidations,
         Two.ActivityFinished,CustomViewPager.OnPageChangeListener,
-        Four.FragmentActivityActions, org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One.HomeLayoutChange{
+        Four.FragmentActivityActions, org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One.HomeLayoutChange,
+        FragmentBookInterface{
 
 
     private String TAG = this.getClass().getSimpleName();
@@ -164,5 +165,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
     public void changePagerBackground(int color) {
         LinearLayout ly = mActualFragment.mLinearLayout;
         ly.setBackgroundColor(getResources().getColor(color));
+    }
+
+    @Override
+    public void finishedActivity(boolean is_finished) {
+        saveProgress();
+        startActivity(getNextActivityIndex());
     }
 }

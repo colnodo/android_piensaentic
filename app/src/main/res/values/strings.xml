@@ -9,6 +9,9 @@
     <string name="password_strong">Contraseña súper segura:</string>
     <string name="password_dummy_strong">M5ht5cne11</string>
 
+    <string name="name_tag">Nombre</string>
+    <string name="nickname_tag">Apodo</string>
+
     <string name="intro1_tittle">Atrévete a superar retos y dominar la tecnología con actividades útiles
         para enfrentar los riesgos digitales</string>
     <string name="intro2_tittle">Lleva tu propio diario digital y aprende consejos de seguridad navegando de forma segura.</string>
@@ -105,5 +108,36 @@
             o te lo roban</string>
 
     <string name="activitythree10_text">¡Nunca dejes tu teléfono solo en un lugar público!</string>
+
+    <string name="activityfour1_text">Ingresa a alguna de tus redes sociales y busca entre tus contactos dos personas que no conozcas o que no
+            tengas idea de porque están allí.</string>
+
+    <string name="activityfour2_text">Revisa sus perfiles y publicaciones, identifica si tienen amigos en común y ponles un apodo que nazca de tu corazón.</string>
+    <string name="activityfour3_tittle">No encontraste ninguna persona desconocida</string>
+    <string name="activityfour3_text">Cuanto tengas personas desconocidas entre tus contactos, asegúrate de que sean reales y confiables.  \n \n
+            Piensa en la cantidad de contenido tuyo al que pueden acceder y si de verdad quieres darle ese permiso.</string>
+    <string name="activityfour4_text">¿Vale la pena que las tengas en tus contactos?¿Cómo puedes asegurarte de que son personas reales y confiables?
+            Piensa en la cantidad de contenido tuyo al que puedan acceder y si de verdad quieres darles ese permiso...
+            si no, mejor elimínalos, así no podrán acceder a tus contenidos privados.</string>
+    <string name="activityfour5_text">Revisa periódicamente tu lista de contactos y seguidores en redes sociales, también los permisos que tienen sobre tu perfil y la información que publicas.</string>
+
+    <string name="activityfive1_text">Mira el siguiente video y conoce sobre la encriptación de los mensajes</string>
+    <string name="activityfive2_text">Escribe un mensaje secreto para tu mejor amigo o amiga, comienza con algo como: Hoy quiero contarte que... \n \n
+        Encríptalo, tómale una foto y envíalo por el sistema de mensajería que más te guste. \n \n
+        ¡No olvides contarle a tu contacto como descifrarlo!</string>
+    <string name="activityfive3_text">Algunos programas de mensajería usan códigos para encriptar los mensajes que intercambias con tus contactos protegiendo tus conversaciones \n \n
+        Pero muchos no lo hacen o lo hacen muy mal.</string>
+    <string name="activityfive4_tittle">Una buena encriptación debería:</string>
+    <string name="activityfive4_text1">Encriptar los mensajes mientras viajan de tu teléfono al de tu contacto.</string>
+    <string name="activityfive4_text2">Encriptar tan bien que ni el programa los pueda entender.</string>
+    <string name="activityfive5_text1">Encriptar además la identidad de tus contactos a quienes envías el mensaje</string>
+    <string name="activityfive5_text2">Usar un método de encriptación revisado y validad por personas expertas</string>
+    <string name="activityfive6_text">Si quieres que tus mensajes estén bien encriptados prueba con Signal o Telegram. \n \n
+            Para saber si tus programas de mensajería son buenos puedes consultar</string>
+    <string name="activityfive6_link">http://www.eff.org/node/82654</string>
+
+    <string name="activityfive2_share_txt">Encriptando con Piensa En Tic</string>
+
+
 
 </resources>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="activity_name_list">
-        <item>SOBRE MI</item>
-        <item>CREA UNA CLAVE SEGURA</item>
-        <item>YO EN UNA IMAGEN</item>
-        <item>QUÉ HAY EN MI CARTERA</item>
+        <item>Perfil</item>
+        <item>Crea una clave segura</item>
+        <item>Yo en una imagen</item>
+        <item>¿Qué hay en mi cartera?</item>
+        <item>Contacto desconocido</item>
+        <item>Encripta tus mensajes</item>
     </string-array>
 
     <string-array name="activity_background_list">
@@ -12,6 +14,8 @@
         <item>act1_fondo</item>
         <item>act2_fondo</item>
         <item>act3_fondo</item>
+        <item>act4_fondo</item>
+        <item>act5_fondo</item>
     </string-array>
 
     <string-array name="activity_pager_list">
@@ -19,6 +23,8 @@
         <item>select_pager_indicator_blue</item>
         <item>select_pager_indicator_yellow</item>
         <item>select_pager_indicator_white</item>
+        <item>select_pager_indicator_dark_blue</item>
+        <item>select_pager_indicator_light_blue</item>
     </string-array>
 
     <string-array name="activity_fragment_list">
@@ -28,6 +34,9 @@
         <item>ActivityThreeMyPocket.One,ActivityThreeMyPocket.Two,ActivityThreeMyPocket.Three,ActivityThreeMyPocket.Four,
             ActivityThreeMyPocket.Five,ActivityThreeMyPocket.Six,ActivityThreeMyPocket.Seven,ActivityThreeMyPocket.Eight,
             ActivityThreeMyPocket.Nine,ActivityThreeMyPocket.Ten</item>
+        <item>ActivityFourUnknownContact.One,ActivityFourUnknownContact.Two,ActivityFourUnknownContact.Three,ActivityFourUnknownContact.Four</item>
+        <item>ActivityFiveEncryption.One,ActivityFiveEncryption.Two,ActivityFiveEncryption.Three,
+            ActivityFiveEncryption.Four,ActivityFiveEncryption.Five,ActivityFiveEncryption.Six</item>
     </string-array>
 
 </resources>

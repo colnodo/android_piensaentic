@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/activityfive4_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView16"
+                android:layout_marginBottom="15dp"
+                style="@style/ActivityTextItemSelected"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pantalla_36_uno"
+                    android:id="@+id/imageView13"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="@string/activityfive4_text1"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView15"
+                    android:textSize="24sp"
+                    style="@style/ActivityInnerTextFieldTittleWhite"
+                    android:layout_marginLeft="25dp"
+                    android:paddingLeft="1dp"
+                    android:textAlignment="textStart" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_36_img_conversacion"
+                android:id="@+id/imageView14"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pantalla_36_dos"
+                    android:id="@+id/iv4"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="@string/activityfive4_text2"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv5"
+                    android:textSize="24sp"
+                    style="@style/ActivityInnerTextFieldTittleWhite"
+                    android:layout_marginLeft="25dp"
+                    android:paddingLeft="1dp"
+                    android:textAlignment="textStart" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -51,6 +51,7 @@ public class Two extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.activity_three_two, container, false);
+        mRgQuestion.clear();
         mRgQuestion.add((RadioGroup) mView.findViewById(R.id.q1));
         mRgQuestion.add((RadioGroup) mView.findViewById(R.id.q2));
         mRgQuestion.add((RadioGroup) mView.findViewById(R.id.q3));
@@ -69,8 +70,9 @@ public class Two extends Fragment {
     }
 
     public void saveSelection(List<String> selection){
+        String pocket_selection = new String();
         if (selection.size()>0) {
-            String pocket_selection = "";
+
             for (String value : selection) {
                 pocket_selection = pocket_selection + value + LocalConstants.SELECTION_SEPARATOR;
             }
@@ -99,11 +101,11 @@ public class Two extends Fragment {
             RadioButton rbChecked = (RadioButton) mView.findViewById(rbCheckedId);
             list.add(rbChecked.getText().toString());
         }
-        if (mEtQuestion6.getText()!= null) {
-            list.add(mEtQuestion6.getText().toString());
-        } else {
-            list.add(" ");
-        }
+//        if (mEtQuestion6.getText()!= null) {
+//            list.add(mEtQuestion6.getText().toString());
+//        } else {
+//            list.add(" ");
+//        }
         return list;
     }
 

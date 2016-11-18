@@ -85,4 +85,13 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+
+    <style name="ActivityInnerTextFieldTittleBlue" parent="ActivityInnerTextFieldTittle">
+        <item name="android:textColor">@color/dark_blue_active_pager</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+    </style>
+
 </resources>
