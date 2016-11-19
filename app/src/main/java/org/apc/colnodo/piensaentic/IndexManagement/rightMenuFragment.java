@@ -1,9 +1,11 @@
 package org.apc.colnodo.piensaentic.IndexManagement;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,8 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
 
     private LinearLayout mList;
     private static List<String> mActivitiesList;
+    private static List<String> mActivitiesMenuIconList;
+    private Context mCtx;
 
     private OnOptionRightMenuClicked mListener;
 
@@ -28,8 +32,9 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
         // Required empty public constructor
     }
 
-    public static RightMenuFragment newInstance(List<String> activityList) {
+    public static RightMenuFragment newInstance(List<String> activityList, List<String> activityMenuIconList) {
         mActivitiesList = activityList;
+        mActivitiesMenuIconList = activityMenuIconList;
         RightMenuFragment fragment = new RightMenuFragment();
         return fragment;
     }
@@ -52,11 +57,14 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
     private void fillList() {
         final LayoutInflater inflater = (LayoutInflater) this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mList.removeAllViews();
+        int i = 0;
         for(String name : mActivitiesList){
-            final View view = inflater.inflate(R.layout.activity_index_item, null, false);
-            TextView text = (TextView)view.findViewById(R.id.activityName);
+            final View view = inflater.inflate(R.layout.menu_item, null, false);
+            TextView text = (TextView)view.findViewById(R.id.tv_tittle);
             text.setText(name);
+            text.setCompoundDrawablesWithIntrinsicBounds(getResourceId(mActivitiesMenuIconList.get(i)),0,0,0);
             view.setOnClickListener(this);
+            i++;
             mList.addView(view);
         }
     }
@@ -65,6 +73,7 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mCtx = context;
         if (context instanceof OnOptionRightMenuClicked) {
             mListener = (OnOptionRightMenuClicked) context;
         } else {
@@ -84,7 +93,8 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
         for (int i = 0; i<mList.getChildCount(); i++){
             if(mList.getChildAt(i).equals(view)){
                 mListener.onRightMenuClicked(i);
-            }
+                view.setAlpha((float)2/5);
+            } else mList.getChildAt(i).setAlpha(1);
         }
     }
 
@@ -101,5 +111,9 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
     public interface OnOptionRightMenuClicked {
         // TODO: Update argument type and name
         void onRightMenuClicked(int position);
+    }
+
+    public int getResourceId(String resource_name){
+        return mCtx.getResources().getIdentifier(resource_name,"drawable",mCtx.getPackageName());
     }
 }

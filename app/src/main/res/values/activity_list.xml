@@ -8,6 +8,18 @@
         <item>Contacto desconocido</item>
         <item>Encripta tus mensajes</item>
         <item>Soy espía</item>
+        <item>Información y contacto</item>
+    </string-array>
+
+    <string-array name="activity_menu_icon_list">
+        <item>vineta_info</item>
+        <item>vineta_perfil</item>
+        <item>vineta_imagen</item>
+        <item>vineta_cartera</item>
+        <item>vineta_contacto_desconocido</item>
+        <item>vineta_encriptar</item>
+        <item>vineta_espia</item>
+        <item>vineta_contactenos</item>
     </string-array>
 
     <string-array name="activity_background_list">
@@ -18,6 +30,7 @@
         <item>act4_fondo</item>
         <item>act5_fondo</item>
         <item>act6_fondo</item>
+        <item>intro_fondo</item>
     </string-array>
 
     <string-array name="activity_pager_list">
@@ -28,6 +41,7 @@
         <item>select_pager_indicator_dark_blue</item>
         <item>select_pager_indicator_light_blue</item>
         <item>select_pager_indicator_pink</item>
+        <item>select_pager_indicator_red</item>
     </string-array>
 
     <string-array name="activity_fragment_list">
@@ -42,6 +56,8 @@
             ActivityFiveEncryption.Four,ActivityFiveEncryption.Five,ActivityFiveEncryption.Six</item>
         <item>ActivitySixImSpy.One,ActivitySixImSpy.Two,ActivitySixImSpy.Three,ActivitySixImSpy.Four,
             ActivitySixImSpy.Five,ActivitySixImSpy.Six,ActivitySixImSpy.Seven
+        </item>
+        <item>InfoAndCredits.Information,InfoAndCredits.Credits
         </item>
     </string-array>
 

@@ -160,19 +160,20 @@
     <string name="contactscreen_2">direccionplaystore.com</string>
     <string name="contactscreen_3">\n \n Envíanos tus sugerencias y observaciones a </string>
     <string name="contactscreen_4">info@piensatic.co</string>
-    <string name="contactscreen_5">\n \n Conoce m[as sobre seguridad y derechos en los espacios digitales en \n \n</string>
+    <string name="contactscreen_5">\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n</string>
     <string name="contactscreen_6">http://dominemoslatecnologia.org</string>
 
     <string name="infoscreen_text1">Este recurso ha sido desarrollado en el marco del proyecto "Promoción de los derechos de internet y
         fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales",
         coordinado por</string>
-    <string name="infoscreen_text2">Colnodo</string>
-    <string name="infoscreen_text3">con el apoyo de</string>
+    <string name="infoscreen_text2">Colnodo </string>
+    <string name="infoscreen_text3">con el apoyo de </string>
     <string name="infoscreen_text4">Asociación para el Progreso de las Comunicaciones (APC).</string>
     <string name="infoscreen_text5"> \n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en </string>
     <string name="infoscreen_text6">github.org </string>
     <string name="loggin">Bienvenido a Piensa En Tic. Por favor ingresa tu contraseña segura.</string>
     <string name="loggin_hint">Contraseña</string>
+    <string name="title_activity_loggin">Loggin</string>
 
 
 </resources>

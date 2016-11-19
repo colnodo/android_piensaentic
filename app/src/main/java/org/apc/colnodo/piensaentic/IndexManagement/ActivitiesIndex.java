@@ -25,6 +25,7 @@ public class ActivitiesIndex {
     private List<String> mActivitiesFragments;
     private List<String> mActivitiesPagerIndicators;
     private List<String> mActivitiesBackground;
+    public List<String> mActivitiesMenuIcon;
 
     public static class Activity{
 
@@ -47,24 +48,12 @@ public class ActivitiesIndex {
     }
 
     public void setActivities(Context ctx){
-
         mContext = ctx;
-
         mActivitiesTittles = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_name_list));
         mActivitiesFragments = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_fragment_list));
         mActivitiesPagerIndicators = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_pager_list));
         mActivitiesBackground = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_background_list));
-
-
-//        for (int i =0; i< mActivitiesTittles.size(); i++){
-//            Activity actual = new Activity();
-//            actual.mActivity_name = mActivitiesTittles.get(i);
-//            actual.mBackground_id = getResourceId(mActivitiesBackground.get(i));
-//            actual.mPager_indicator_id = getResourceId(mActivitiesPagerIndicators.get(i));
-//            actual.mFragments = getFragments(mActivitiesFragments.get(i));
-//            mIndex.add(actual);
-//        }
-
+        mActivitiesMenuIcon = Arrays.asList(mContext.getResources().getStringArray(R.array.activity_menu_icon_list));
     }
 
     private ArrayList<Fragment> getFragments(String activitiesFragments) {

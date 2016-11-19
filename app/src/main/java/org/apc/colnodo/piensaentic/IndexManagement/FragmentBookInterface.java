@@ -10,4 +10,8 @@ public interface FragmentBookInterface {
 
     public void changeMenuItem(int r_id);
 
+    public void isAllowedToContinue(boolean mAllowedToContinue);
+
+    public void changePagerBackground(int color);
+
 }

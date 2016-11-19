@@ -88,25 +88,26 @@ public class Two extends Fragment implements View.OnClickListener {
 
     private void chargeImage() {
         String path = UtilsFunctions.getSharedString(mCtx, LocalConstants.PHOTO_PATH);
-
-        try {
-            File file = new File(path);
-            Bitmap src = BitmapFactory.decodeFile(path);
-            int height = src.getHeight();
-            int width = src.getWidth();
-            int side = width;
-            if (height < width){
-                side = height;
+        if (path!= null) {
+            try {
+                File file = new File(path);
+                Bitmap src = BitmapFactory.decodeFile(path);
+                int height = src.getHeight();
+                int width = src.getWidth();
+                int side = width;
+                if (height < width) {
+                    side = height;
+                }
+                Bitmap square = Bitmap.createBitmap(src, 0, 0, side, side);
+                Bitmap b = Bitmap.createScaledBitmap(square, PHOTO_WIDTH, PHOTO_HEIGHT, false);
+                ImageView im = (ImageView) mLyFullContentSpace.findViewById(R.id.iv_photo);
+                im.setImageBitmap(b);
+                mMetaData = new ExifInterface(file.getAbsolutePath());
+                setMetaTagList();
+                Log.d(TAG, "Image Real Path: " + path);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            Bitmap square = Bitmap.createBitmap(src, 0, 0, side, side);
-            Bitmap b = Bitmap.createScaledBitmap(square, PHOTO_WIDTH, PHOTO_HEIGHT, false);
-            ImageView im = (ImageView)mLyFullContentSpace.findViewById(R.id.iv_photo);
-            im.setImageBitmap(b);
-            mMetaData = new ExifInterface(file.getAbsolutePath());
-            setMetaTagList();
-            Log.d(TAG, "Image Real Path: " + path);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

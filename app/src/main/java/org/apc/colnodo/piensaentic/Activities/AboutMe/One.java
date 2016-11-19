@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
@@ -38,7 +39,7 @@ public class One extends Fragment implements View.OnClickListener,
     private EditText mEtName, mEtNickname, mEtEmail;
     private TextView mTvBirthdate;
     private String mName = null, mNickname = null, mEmail = null, mBirthdate = null;
-    public fragmentValidations mValidationsListener;
+    public FragmentBookInterface mFragementBookInterface;
     private boolean mAllowedToContinue;
 
     private DatePickerDialog.OnDateSetListener mListener;
@@ -58,7 +59,7 @@ public class One extends Fragment implements View.OnClickListener,
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAllowedToContinue = false;
-        mValidationsListener.isAllowedToContinue(mAllowedToContinue);
+        mFragementBookInterface.isAllowedToContinue(mAllowedToContinue);
     }
 
     @Override
@@ -101,13 +102,14 @@ public class One extends Fragment implements View.OnClickListener,
         mEtNickname.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_NICK_NAME));
         mEtEmail.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_EMAIL));
         mTvBirthdate.setText(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_BIRTHDATE));
-        mValidationsListener.isAllowedToContinue(true);
+        mFragementBookInterface.isAllowedToContinue(true);
     }
 
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mValidationsListener = (fragmentValidations) context;
+        mFragementBookInterface = (FragmentBookInterface) context;
+        mFragementBookInterface.changeMenuItem(R.drawable.hamburguesa);
     }
 
     @Override
@@ -158,9 +160,9 @@ public class One extends Fragment implements View.OnClickListener,
         Log.d(TAG,isEmpty(mEtName) + ": " + isEmpty(mEtNickname) +  ": " + !isEmail(mEtEmail) +  ": " + !isValidBirthdate(mTvBirthdate) );
         if (isEmpty(mEtName) || isEmpty(mEtNickname)||
                 !isEmail(mEtEmail)|| !isValidBirthdate(mTvBirthdate)) {
-            mValidationsListener.isAllowedToContinue(false);
+            mFragementBookInterface.isAllowedToContinue(false);
         } else {
-            mValidationsListener.isAllowedToContinue(true);
+            mFragementBookInterface.isAllowedToContinue(true);
         }
     }
 
@@ -177,10 +179,6 @@ public class One extends Fragment implements View.OnClickListener,
             Log.d(TAG, "Is Email: "+ mail.matches(Patterns.EMAIL_ADDRESS.toString()));
             return mail.matches(Patterns.EMAIL_ADDRESS.toString());
         }
-    }
-
-    public interface fragmentValidations {
-        void isAllowedToContinue(boolean mAllowedToContinue);
     }
 
     private TextWatcher textWatcher = new TextWatcher() {

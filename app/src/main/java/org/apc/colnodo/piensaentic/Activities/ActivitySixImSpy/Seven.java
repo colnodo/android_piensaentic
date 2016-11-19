@@ -102,6 +102,7 @@ public class Seven extends Fragment implements View.OnClickListener{
         switch (view.getId()){
             case R.id.iv_lets_continue:
                 mFragmentInterface.finishedActivity(true);
+                mFragmentInterface.changeMenuItem(R.drawable.hamburguesa);
         }
     }
 

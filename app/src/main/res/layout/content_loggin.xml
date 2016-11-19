@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_loggin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.apc.colnodo.piensaentic.IndexManagement.LogginActivity"
+    tools:showIn="@layout/activity_loggin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/logo"
+                android:id="@+id/imageView21"
+                android:layout_marginTop="25dp"/>
+
+        <TextView
+                android:text="@string/loggin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+                android:layout_marginTop="20dp"
+                android:layout_margin="20dp"
+                android:textSize="28sp"
+                style="@style/ActivityInnerTextFieldTittle"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/loggin_hint"
+                android:textColorHint="@color/blue_dark_activity_text"
+                android:ems="10"
+                android:textSize="28sp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/et_loggin"
+                style="@style/ActivityInnerTextFieldEditable"/>
+    </LinearLayout>
+
+</RelativeLayout>

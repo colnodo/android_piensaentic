@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.PhotoPicker;
@@ -25,10 +26,9 @@ import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 public class One extends Fragment implements  View.OnClickListener{
 
     private RelativeLayout mFullContentSpace;
-    private TextView mTvName, mTvNickname, mTvEmail, mTvBirthdate;
     private ImageView mIvHeader, mImButton;
-    private Two.ActivityFinished mIsFinished;
     private Context mCtx;
+    FragmentBookInterface mFragmentInterface;
     private static final int PICK_IMAGE_ID = 234;
 
     public One(){}
@@ -62,7 +62,8 @@ public class One extends Fragment implements  View.OnClickListener{
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mIsFinished = (Two.ActivityFinished) mCtx;
+        mFragmentInterface = (FragmentBookInterface) mCtx;
+        mFragmentInterface.changeMenuItem(R.drawable.hamburguesa);
     }
 
 

@@ -12,6 +12,16 @@ import java.util.List;
 
 public class LocalConstants {
 
+    //URLS
+    public static final String PLAY_STORE = "https://play.google.com/store/apps/details?id=org.apc.colnodo.piensaentic&hl=es";
+    public static final String MAIL = "info@piensaentic.co";
+    public static final String DOMINEMOS_TECNOLOGIA = "http://dominemoslatecnologia.org";
+    public static final String COLNODO = "http://colnodo.apc.org";
+    public static final String APC = "http://apc.org/";
+    public static final String GITHUB = "https://github.com/";
+
+
+
     //Basic String
 
 

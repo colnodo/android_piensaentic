@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class One extends Fragment {
     Context mContext;
     List<TextView> mTvValues;
     View mView;
+    FragmentBookInterface mFragmentInterface;
 
     public One(){}
 
@@ -47,5 +49,7 @@ public class One extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
+        mFragmentInterface = (FragmentBookInterface) mContext;
+        mFragmentInterface.changeMenuItem(R.drawable.hamburguesa);
     }
 }

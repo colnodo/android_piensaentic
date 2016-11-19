@@ -18,6 +18,7 @@ import android.widget.TextView;
 import org.apc.colnodo.piensaentic.Activities.AboutMe.*;
 import org.apc.colnodo.piensaentic.Activities.AboutMe.One;
 import org.apc.colnodo.piensaentic.Activities.ActivityPageTemplate;
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
@@ -34,7 +35,7 @@ public class Four extends Fragment implements View.OnClickListener{
     int mAlphaButtonOff = 40;
     int mAlphaButtonOn = 255;
     private Context mCtx;
-    public One.fragmentValidations mValidationsListener;
+    public FragmentBookInterface mFragmentInterface;
     public FragmentActivityActions mActions;
 
     public Four(){
@@ -80,9 +81,9 @@ public class Four extends Fragment implements View.OnClickListener{
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mValidationsListener = (One.fragmentValidations) context;
         mActions = (FragmentActivityActions) context;
-        mValidationsListener.isAllowedToContinue(true);
+        mFragmentInterface = (FragmentBookInterface)mCtx;
+        mFragmentInterface.isAllowedToContinue(true);
     }
 
 
@@ -125,7 +126,7 @@ public class Four extends Fragment implements View.OnClickListener{
             } else {
                 mImCreatePassword.setImageAlpha(mAlphaButtonOff);
                 mImCreatePassword.setClickable(false);
-                mValidationsListener.isAllowedToContinue(false);
+                mFragmentInterface.isAllowedToContinue(false);
             }
         } catch (Exception ea){
             ea.printStackTrace();

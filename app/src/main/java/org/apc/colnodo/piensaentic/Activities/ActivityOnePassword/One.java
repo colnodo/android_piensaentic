@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
@@ -25,6 +26,7 @@ public class One extends Fragment {
     TextView mTvTittle;
     ImageView mImageView;
     private Context mCtx;
+    FragmentBookInterface mFragmentBookInterface;
 
     public One(){
 
@@ -62,6 +64,8 @@ public class One extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
+        mFragmentBookInterface = (FragmentBookInterface) mCtx;
+        mFragmentBookInterface.changeMenuItem(R.drawable.hamburguesa);
     }
 
     @Override

@@ -28,7 +28,7 @@ import java.util.List;
  */
 
 public class Home extends AppCompatActivity implements View.OnClickListener,
-        RightMenuFragment.OnOptionRightMenuClicked,  org.apc.colnodo.piensaentic.Activities.AboutMe.One.fragmentValidations,
+        RightMenuFragment.OnOptionRightMenuClicked,
         Two.ActivityFinished,CustomViewPager.OnPageChangeListener,
         Four.FragmentActivityActions, org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One.HomeLayoutChange,
         FragmentBookInterface{
@@ -61,7 +61,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         mIndex.setActivities(this);
         startActivity(getNextActivityIndex());
         activitiesList = mIndex.getActivitiesList();
-        Fragment rightMenu = RightMenuFragment.newInstance(activitiesList);
+        Fragment rightMenu = RightMenuFragment.newInstance(activitiesList, mIndex.mActivitiesMenuIcon);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_ly_content_profile, rightMenu).commit();
     }
 

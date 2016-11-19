@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
 /**
@@ -15,7 +17,7 @@ import org.apc.colnodo.piensaentic.R;
 
 public class One extends Fragment {
 
-    HomeLayoutChange changeLayout;
+    FragmentBookInterface mFragementInterface;
 
     public One(){}
 
@@ -40,8 +42,9 @@ public class One extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        changeLayout = (HomeLayoutChange) context;
-        changeLayout.changePagerBackground(R.color.magenta_alpha);
+        mFragementInterface = (FragmentBookInterface) context;
+        mFragementInterface.changeMenuItem(R.drawable.hamburguesa);
+        mFragementInterface.changePagerBackground(R.color.magenta_alpha);
     }
 
     public interface HomeLayoutChange {
