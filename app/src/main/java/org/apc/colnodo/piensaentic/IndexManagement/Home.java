@@ -172,4 +172,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         saveProgress();
         startActivity(getNextActivityIndex());
     }
+
+    @Override
+    public void changeMenuItem(int r_id) {
+        mIbMenu.setImageResource(r_id);
+    }
 }

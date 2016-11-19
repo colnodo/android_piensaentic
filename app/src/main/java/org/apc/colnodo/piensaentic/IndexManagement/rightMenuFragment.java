@@ -86,7 +86,6 @@ public class RightMenuFragment extends Fragment implements View.OnClickListener 
                 mListener.onRightMenuClicked(i);
             }
         }
-
     }
 
     /**

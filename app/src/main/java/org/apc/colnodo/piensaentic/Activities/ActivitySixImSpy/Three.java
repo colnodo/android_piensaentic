@@ -1,4 +1,4 @@
-package org.apc.colnodo.piensaentic.Activities.ActivityFourUnknownContact;
+package org.apc.colnodo.piensaentic.Activities.ActivitySixImSpy;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by apple on 11/17/16.
+ * Created by apple on 11/19/16.
  */
 
-public class Two extends Fragment {
+public class Three extends Fragment {
 
     Context mContext;
     List<TextView> mTvValues;
@@ -31,10 +31,10 @@ public class Two extends Fragment {
     List<EditText> mEtArray = new ArrayList<>();
 
 
-    public Two(){}
+    public Three(){}
 
-    public static Two newInstance() {
-        Two fragment = new Two();
+    public static Three newInstance() {
+        Three fragment = new Three();
         return fragment;
     }
 
@@ -47,12 +47,12 @@ public class Two extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mTvValues = new ArrayList<>();
-        mView = inflater.inflate(R.layout.activity_four_two, container, false);
+        mView = inflater.inflate(R.layout.activity_six_three, container, false);
         mEtArray.clear();
-        mEtArray.add((EditText)mView.findViewById(R.id.et_name_1));
-        mEtArray.add((EditText)mView.findViewById(R.id.et_name_2));
-        mEtArray.add((EditText)mView.findViewById(R.id.et_nickname_1));
-        mEtArray.add((EditText)mView.findViewById(R.id.et_nickname_2));
+        mEtArray.add((EditText)mView.findViewById(R.id.et_frecuented_sites_1));
+        mEtArray.add((EditText)mView.findViewById(R.id.et_frecuented_sites_2));
+        mEtArray.add((EditText)mView.findViewById(R.id.et_frecuented_sites_3));
+        mEtArray.add((EditText)mView.findViewById(R.id.et_contact));
         chargeFields();
         for (EditText et : mEtArray){
 
@@ -88,7 +88,7 @@ public class Two extends Fragment {
         int i = 0;
         for (EditText et:mEtArray){
             try{
-                UtilsFunctions.saveSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(i),et.getText().toString());
+                UtilsFunctions.saveSharedString(mContext, LocalConstants.IM_SPY_FIELDS_2.get(i),et.getText().toString());
             } catch (Exception ea){
             }
             i++;
@@ -98,7 +98,7 @@ public class Two extends Fragment {
     private void chargeFields(){
         int i = 0;
         for (EditText et: mEtArray){
-            String text = UtilsFunctions.getSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(i));
+            String text = UtilsFunctions.getSharedString(mContext, LocalConstants.IM_SPY_FIELDS_2.get(i));
             if (text != null){
                 et.setText(text);
             }
@@ -118,6 +118,4 @@ public class Two extends Fragment {
             }
         }
     }
-
-
 }

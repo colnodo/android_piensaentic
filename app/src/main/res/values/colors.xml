@@ -18,10 +18,10 @@
     <color name="light_blue_inactive_pager">#038571</color>
     <color name="blue_sky_active_pager">#00cad9</color>
     <color name="blue_sky_inactive_pager">#5f998a</color>
+    <color name="pink_inactive_pager">#f081a8</color>
+    <color name="pink_active_pager">#fc477a</color>
     <color name="transparent">#00ffffff</color>
     <color name="magenta_alpha">#80D83872</color>
-
-    00cad9
-
-
+    <color name="green_army">#00362f</color>
+    <color name="menu_blue_alpha">#c0203838</color>
 </resources>

@@ -8,4 +8,6 @@ public interface FragmentBookInterface {
 
     public void finishedActivity(boolean is_finished);
 
+    public void changeMenuItem(int r_id);
+
 }

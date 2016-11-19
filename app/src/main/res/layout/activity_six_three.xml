@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_41_lupa_dos"
+                android:id="@+id/imageView11" />
+
+            <TextView
+                android:text="@string/activitysix3_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                style="@style/ActivityInnerTextFieldTittleWhite"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="15dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pantalla_41_marco"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:text="@string/frecuented_sites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView18"
+                    android:layout_marginTop="15dp"
+                    style="@style/ActivityTextFieldGreen"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/et_frecuented_sites_1"
+                    android:background="@drawable/pantalla_40_lines2"
+                    style="@style/ActivityTextFieldGreen"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/et_frecuented_sites_2"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pantalla_40_lines2"
+                    style="@style/ActivityTextFieldGreen"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/et_frecuented_sites_3"
+                    android:background="@drawable/pantalla_40_lines2"
+                    style="@style/ActivityTextFieldGreen"/>
+
+                <TextView
+                    android:text="@string/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView182"
+                    android:layout_marginTop="10dp"
+                    style="@style/ActivityTextFieldGreen"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/et_contact"
+                    android:background="@drawable/pantalla_40_lines2"
+                    style="@style/ActivityTextFieldGreen"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

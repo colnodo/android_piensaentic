@@ -37,6 +37,7 @@ public class LocalConstants {
     public static final String PHOTO_PATH = "PHOTO_PATH";
     public static final String POCKET_SELECTION = "POCKET_SELECTION";
     public static final String PHONE_SELECTION = "PHONE_SELECTION";
+    public static final String IM_SPY_FIELDS_4 = "IM_SPY_FIELDS_4";
 
 
     public static final List<String> UNKOWN_CONTACT_FIELDS = new ArrayList<String>(){{
@@ -44,6 +45,35 @@ public class LocalConstants {
         add("UNKOWN_CONTACT_NAME_2");
         add("UNKOWN_CONTACT_NICKNAME_1");
         add("UNKOWN_CONTACT_NICKNAME_2");
+    }};
+
+    public static final List<String> IM_SPY_FIELDS_1 = new ArrayList<String>(){{
+        add("IM_SPY_FIELDS_1_PLATE");
+        add("IM_SPY_FIELDS_1_CONTACT");
+    }};
+
+    public static final List<String> IM_SPY_FIELDS_2 = new ArrayList<String>(){{
+        add("IM_SPY_FIELDS_2_FRECUENTED_SITES_1");
+        add("IM_SPY_FIELDS_2_FRECUENTED_SITES_2");
+        add("IM_SPY_FIELDS_2_FRECUENTED_SITES_3");
+        add("IM_SPY_FIELDS_2_CONTACT");
+    }};
+
+    public static final List<String> IM_SPY_FIELDS_3 = new ArrayList<String>(){{
+        add("IM_SPY_FIELDS_3_DNI");
+        add("IM_SPY_FIELDS_3_CONTACT");
+    }};
+
+
+    public static final List<String> IM_SPY_FIELDS_TOTAL = new ArrayList<String>(){{
+        add(IM_SPY_FIELDS_1.get(0));
+        add(IM_SPY_FIELDS_1.get(1));
+        add(IM_SPY_FIELDS_2.get(0));
+        add(IM_SPY_FIELDS_2.get(1));
+        add(IM_SPY_FIELDS_2.get(2));
+        add(IM_SPY_FIELDS_2.get(3));
+        add(IM_SPY_FIELDS_3.get(0));
+        add(IM_SPY_FIELDS_3.get(1));
     }};
 
     //Activities fields

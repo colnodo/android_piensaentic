@@ -12,6 +12,11 @@
     <string name="name_tag">Nombre</string>
     <string name="nickname_tag">Apodo</string>
 
+    <string name="plate">Placa</string>
+    <string name="contact">Contacto</string>
+    <string name="frecuented_sites">Sitios que frecuenta</string>
+    <string name="dni">Documento de identidad \n Teléfono</string>
+
     <string name="intro1_tittle">Atrévete a superar retos y dominar la tecnología con actividades útiles
         para enfrentar los riesgos digitales</string>
     <string name="intro2_tittle">Lleva tu propio diario digital y aprende consejos de seguridad navegando de forma segura.</string>
@@ -138,6 +143,36 @@
 
     <string name="activityfive2_share_txt">Encriptando con Piensa En Tic</string>
 
+    <string name="activitysix1_tittle">Ahora eres espía!</string>
+    <string name="activitysix1_text">Mira las fotos que publican algunos de tus contactos y busca lo siguiente</string>
+    <string name="activitysix2_text">Una foto en la que se lean las placas del carro de tu contacto</string>
+    <string name="activitysix3_text">Una foto que muestre los sitios que frecuentan los fines de semana</string>
+    <string name="activitysix4_text">Una imagen en la que se vea el número de documento de identidad o teléfono</string>
+    <string name="activitysix6_text">Las imágenes y fotografías que publicas pueden decir mucho más de ti de lo que quisieras. \n \n
+        Mira entre tus imágenes y busca aquellas que muestren información que no quieres que sea pública! \n \n
+        Elimínalas o protégelas, de todas maneras recuerda que alguien ya puede tener una copia de ellas.</string>
+    <string name="activitysix7_text"> ¿Qué imágenes con información encontraste?</string>
+    <string name="activitysix7_text2">¿Las eliminaste o protegiste?</string>
+    <string name="activitysix7_chose1">Sí, lo hice</string>
+    <string name="activitysix7_choose2">No, lo haré más tarde</string>
+
+    <string name="contactscreen_1">Para dejar tus comentarios o calificar ingresa a </string>
+    <string name="contactscreen_2">direccionplaystore.com</string>
+    <string name="contactscreen_3">\n \n Envíanos tus sugerencias y observaciones a </string>
+    <string name="contactscreen_4">info@piensatic.co</string>
+    <string name="contactscreen_5">\n \n Conoce m[as sobre seguridad y derechos en los espacios digitales en \n \n</string>
+    <string name="contactscreen_6">http://dominemoslatecnologia.org</string>
+
+    <string name="infoscreen_text1">Este recurso ha sido desarrollado en el marco del proyecto "Promoción de los derechos de internet y
+        fortalecimiento de capacidades para la prevención de riesgos y la atención de violencias digitales",
+        coordinado por</string>
+    <string name="infoscreen_text2">Colnodo</string>
+    <string name="infoscreen_text3">con el apoyo de</string>
+    <string name="infoscreen_text4">Asociación para el Progreso de las Comunicaciones (APC).</string>
+    <string name="infoscreen_text5"> \n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en </string>
+    <string name="infoscreen_text6">github.org </string>
+    <string name="loggin">Bienvenido a Piensa En Tic. Por favor ingresa tu contraseña segura.</string>
+    <string name="loggin_hint">Contraseña</string>
 
 
 </resources>

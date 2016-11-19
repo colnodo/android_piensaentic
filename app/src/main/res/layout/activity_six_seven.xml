@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:text="@string/activitysix7_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                style="@style/ActivityInnerTextFieldTittleWhite"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="15dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/et_images"
+                android:background="@drawable/pantalla_45_marco"
+                style="@style/ActivityTextFieldGreen"/>
+
+            <TextView
+                android:text="@string/activitysix7_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView18"
+                android:layout_marginTop="15dp"
+                style="@style/ActivityInnerTextFieldTittleWhite"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:text="@string/activitysix7_chose1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButton2"
+                    android:layout_weight="1"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    android:textSize="20sp"
+                    android:checked="true"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal"/>
+
+                <RadioButton
+                    android:text="@string/activitysix7_choose2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButton"
+                    android:layout_weight="1"
+                    style="@style/ActivityInnerTextFieldTittleWhiteRadioTittle"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal"/>
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_45_fantastico"
+                android:id="@+id/imageView18"
+                android:layout_marginTop="15dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_45_btn_continuar"
+                android:id="@+id/iv_lets_continue"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
