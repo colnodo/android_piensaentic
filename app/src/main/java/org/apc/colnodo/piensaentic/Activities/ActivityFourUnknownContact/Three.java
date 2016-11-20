@@ -90,7 +90,7 @@ public class Three extends Fragment {
     private void setLayout(int type){
         switch (type){
             case 1:
-                mTvTittle.setText(R.string.activityone3_tittle);
+                mTvTittle.setText(R.string.activityfour3_tittle);
                 mTvText.setText(R.string.activityfour3_text);
                 mImMsg.setImageResource(R.drawable.pantalla_30_felicitaciones);
                 break;

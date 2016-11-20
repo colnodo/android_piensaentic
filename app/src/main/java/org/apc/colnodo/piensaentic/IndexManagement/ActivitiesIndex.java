@@ -64,7 +64,7 @@ public class ActivitiesIndex {
             try {
                 Class<?> act = Class.forName("org.apc.colnodo.piensaentic.Activities." + fragmentName.trim());
                 Constructor<?> ctor = act.getConstructor();
-                Object object = ctor.newInstance(new Objects[]{});
+                Object object = ctor.newInstance();//(new Objects[]{});
                 Fragment fragment = (Fragment) object;
                 list.add(fragment);
             } catch(Exception ea){
@@ -106,6 +106,5 @@ public class ActivitiesIndex {
         }
         return list;
     }
-
 
 }

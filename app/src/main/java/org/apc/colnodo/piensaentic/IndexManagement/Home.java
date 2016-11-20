@@ -1,5 +1,6 @@
 package org.apc.colnodo.piensaentic.IndexManagement;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -12,13 +13,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.apc.colnodo.piensaentic.Activities.AboutMe.One;
-import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
 import org.apc.colnodo.piensaentic.Activities.ActivityOnePassword.Four;
+import org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One;
 import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
 import org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager;
 import org.apc.colnodo.piensaentic.R;
+import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.RequestTask;
+import org.apc.colnodo.piensaentic.Utils.ServerRequest;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +33,9 @@ import java.util.List;
  */
 
 public class Home extends AppCompatActivity implements View.OnClickListener,
-        RightMenuFragment.OnOptionRightMenuClicked,
-        Two.ActivityFinished,CustomViewPager.OnPageChangeListener,
-        Four.FragmentActivityActions, org.apc.colnodo.piensaentic.Activities.ActivityThreeMyPocket.One.HomeLayoutChange,
-        FragmentBookInterface{
+        RightMenuFragment.OnOptionRightMenuClicked,CustomViewPager.OnPageChangeListener,
+        Four.FragmentActivityActions, One.HomeLayoutChange,
+        FragmentBookInterface, RequestTask.OnRequestCompleted {
 
 
     private String TAG = this.getClass().getSimpleName();
@@ -43,6 +47,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
     private ActivityManager mActualFragment;
     private CustomViewPager mViewPager;
     private String mActualActivityName;
+    ProgressDialog loader;
 
     private boolean mAllowedToContinue = true;
 
@@ -52,6 +57,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         super.onCreate(savedInstanceState);
         this.setTheme(R.style.AppTheme);
         setContentView(R.layout.home);
+        Fabric.with(this, new Crashlytics());
         mIbMenu = (ImageView)findViewById(R.id.iv_hamburguesa);
         mLyMenuContainer = (LinearLayout)findViewById(R.id.ly_right_menu_container);
         mLyMenuContainer.bringToFront();
@@ -61,6 +67,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         mIndex.setActivities(this);
         startActivity(getNextActivityIndex());
         activitiesList = mIndex.getActivitiesList();
+        loader = new ProgressDialog(this);
+        loader.setMessage(getString(R.string.registering_message));
         Fragment rightMenu = RightMenuFragment.newInstance(activitiesList, mIndex.mActivitiesMenuIcon);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_ly_content_profile, rightMenu).commit();
     }
@@ -145,14 +153,23 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         }
     }
 
-    @Override
-    public void activityFinish(boolean isFinished) {
-        saveProgress();
-        startActivity(getNextActivityIndex());
-    }
-
     private void saveProgress() {
         UtilsFunctions.saveSharedBoolean(this, mActualActivityName, true);
+        sendActivityToServer();
+    }
+
+    private void sendActivityToServer() {
+        ServerRequest.ActivityRegisterList list = new ServerRequest.ActivityRegisterList();
+        list.user_mail = UtilsFunctions.getSharedString(this,LocalConstants.USER_EMAIL);
+        list.activities_register = new ArrayList<>();
+        for (String activity:activitiesList){
+            if (UtilsFunctions.getSharedBoolean(this,activity)){
+                list.activities_register.add(new ServerRequest.ActivityRegister(activity, true));
+            }
+        }
+
+        new ServerRequest.RegisterActivity(this, LocalConstants.REGISTER_ACTIVITY_TASK,list).executePost();
+
     }
 
     @Override
@@ -168,6 +185,17 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
     }
 
     @Override
+    public void registerUserAccepted() {
+        new ServerRequest.RegisterUser(this,loader, LocalConstants.REGISTER_USER_TASK,
+                UtilsFunctions.getSharedString(this,LocalConstants.USER_NAME),
+                UtilsFunctions.getSharedString(this,LocalConstants.USER_NICK_NAME),
+                UtilsFunctions.getSharedString(this,LocalConstants.USER_EMAIL),
+                UtilsFunctions.getSharedString(this,LocalConstants.USER_BIRTHDATE),
+                true
+                ).executePost();
+    }
+
+    @Override
     public void finishedActivity(boolean is_finished) {
         saveProgress();
         startActivity(getNextActivityIndex());
@@ -175,6 +203,31 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
 
     @Override
     public void changeMenuItem(int r_id) {
-        mIbMenu.setImageResource(r_id);
+        try {
+            mIbMenu.setImageResource(r_id);
+        } catch (Exception ea){
+            ea.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void onRequestResponse(Object response, int taskId) {
+
+        switch (taskId){
+            case LocalConstants.REGISTER_USER_TASK:
+                UtilsFunctions.saveSharedBoolean(this, LocalConstants.USER_REGISTERED_SERVER, true);
+                Log.d(TAG, "User has been successful registered");
+                break;
+            case LocalConstants.REGISTER_ACTIVITY_TASK:
+                Log.d(TAG, "Activity successful registered");
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void onRequestError(int errorCode, String errorMsg, int taskId) {
+
     }
 }

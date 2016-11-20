@@ -14,11 +14,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.google.android.gms.vision.text.Line;
-
 import org.apc.colnodo.piensaentic.Activities.AboutMe.*;
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
@@ -33,7 +31,7 @@ public class Five extends Fragment implements View.OnClickListener{
     ImageView mImStep, mImCreatePassword;
     TextView mTvTittle;
     private Context mCtx;
-    public Two.ActivityFinished mFinished;
+    public FragmentBookInterface fragmentBookInterface;
 
     public Five(){
 
@@ -78,7 +76,7 @@ public class Five extends Fragment implements View.OnClickListener{
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mFinished = (Two.ActivityFinished) context;
+        fragmentBookInterface = (FragmentBookInterface) context;
     }
 
     @Override
@@ -90,7 +88,7 @@ public class Five extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.im_create_password:
-                mFinished.activityFinish(true);
+                fragmentBookInterface.finishedActivity(true);
                 break;
             default:
                 break;

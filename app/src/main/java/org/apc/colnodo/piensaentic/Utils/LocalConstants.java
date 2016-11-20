@@ -12,6 +12,15 @@ import java.util.List;
 
 public class LocalConstants {
 
+    public static final String API_KEY = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM";
+
+
+
+    //Task ID's
+    public static final int REGISTER_USER_TASK = 120;
+    public static final int REGISTER_ACTIVITY_TASK = 121;
+
+
     //URLS
     public static final String PLAY_STORE = "https://play.google.com/store/apps/details?id=org.apc.colnodo.piensaentic&hl=es";
     public static final String MAIL = "info@piensaentic.co";
@@ -42,6 +51,7 @@ public class LocalConstants {
     public static final String USER_EMAIL = "USER_EMAIL";
     public static final String USER_PASS = "USER_PASS";
     public static final String DATA_TREATMENT_ACCEPTED = "DATA_TREATMENT_ACCEPTED";
+    public static final String USER_REGISTERED_SERVER = "USER_REGISTERED_SERVER";
     public static final String GENERATE_PASSWORD_ACCEPTED = "GENERATE_PASSWORD_ACCEPTED";
     public static final String INTRO_VIEWED = "INTRO_VIEWED";
     public static final String PHOTO_PATH = "PHOTO_PATH";

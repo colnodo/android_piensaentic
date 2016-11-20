@@ -43,7 +43,6 @@ public class Two extends Fragment implements View.OnClickListener {
     private RelativeLayout mFullContentSpace;
     private LinearLayout mLyFullContentSpace;
     private ImageView mIvHeader, mImButton;
-    private org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished mIsFinished;
     private Context mCtx;
     private ExifInterface mMetaData;
     private static final int PICK_IMAGE_ID = 234;
@@ -90,8 +89,10 @@ public class Two extends Fragment implements View.OnClickListener {
         String path = UtilsFunctions.getSharedString(mCtx, LocalConstants.PHOTO_PATH);
         if (path!= null) {
             try {
+                final BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 8;
                 File file = new File(path);
-                Bitmap src = BitmapFactory.decodeFile(path);
+                Bitmap src = BitmapFactory.decodeFile(path, options);
                 int height = src.getHeight();
                 int width = src.getWidth();
                 int side = width;
@@ -114,7 +115,6 @@ public class Two extends Fragment implements View.OnClickListener {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mIsFinished = (org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished) mCtx;
     }
 
 

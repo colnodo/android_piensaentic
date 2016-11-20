@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import org.apc.colnodo.piensaentic.Activities.AboutMe.*;
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Ten extends Fragment implements View.OnClickListener{
 
     Context mContext;
     One.HomeLayoutChange changeLayout;
-    public org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished mFinished;
+    public FragmentBookInterface fragmentBookInterface;
     ImageView mImLetsContinue;
     View mView;
 
@@ -55,7 +56,7 @@ public class Ten extends Fragment implements View.OnClickListener{
         super.onAttach(context);
         mContext = context;
         changeLayout = (One.HomeLayoutChange) mContext;
-        mFinished = (Two.ActivityFinished) context;
+        fragmentBookInterface = (FragmentBookInterface) context;
         changeLayout.changePagerBackground(R.color.magenta_alpha);
     }
 
@@ -63,7 +64,7 @@ public class Ten extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_lets_continue:
-                mFinished.activityFinish(true);
+                fragmentBookInterface.finishedActivity(true);
         }
     }
 }

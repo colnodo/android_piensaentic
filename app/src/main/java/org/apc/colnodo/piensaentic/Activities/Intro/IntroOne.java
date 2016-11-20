@@ -20,6 +20,7 @@ import org.apc.colnodo.piensaentic.Activities.ActivityOnePassword.Five;
 import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
 import org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager;
 import org.apc.colnodo.piensaentic.IndexManagement.ActivitiesIndex;
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.IndexManagement.Home;
 import org.apc.colnodo.piensaentic.IndexManagement.RightMenuFragment;
 import org.apc.colnodo.piensaentic.R;
@@ -39,7 +40,7 @@ import java.util.zip.Inflater;
         public RelativeLayout mFragmentContentSpace;
         ImageView mIvLogo;
         public TextView mTvTittle;
-        public Two.ActivityFinished mFinished;
+        public FragmentBookInterface fragmentBookInterface;
         Context mCtx;
         private String mType = null;
 
@@ -91,14 +92,14 @@ import java.util.zip.Inflater;
         public void onAttach(Context context) {
             super.onAttach(context);
             mCtx = context;
-            mFinished = (Two.ActivityFinished) mCtx;
+            fragmentBookInterface = (FragmentBookInterface) mCtx;
         }
 
         @Override
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.iv_letstart:
-                    mFinished.activityFinish(true);
+                    fragmentBookInterface.finishedActivity(true);
             }
         }
 

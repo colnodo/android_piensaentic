@@ -11,8 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.text.Line;
-
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
 import java.util.ArrayList;
@@ -32,12 +31,14 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
     private Context mCtx;
     private int mType;
     public static List<Pair<String, String>> mMetaTagsList = new ArrayList<>();
+    FragmentBookInterface mFragmentInterface;
 
 
     public AlertDialog(Context context, int dialogType) {
         super(context);
         mCtx = context;
         mType = dialogType;
+        mFragmentInterface = (FragmentBookInterface) mCtx;
     }
 
     public AlertDialog(Context context, int dialogType, List<Pair<String, String>> list) {
@@ -94,6 +95,7 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
         switch (view.getId()){
             case R.id.iv_treatmen_accept:
                 UtilsFunctions.saveSharedBoolean(mCtx, LocalConstants.DATA_TREATMENT_ACCEPTED, true);
+                mFragmentInterface.registerUserAccepted();
                 dismiss();
                 break;
             case R.id.iv_treatmen_no_accept:

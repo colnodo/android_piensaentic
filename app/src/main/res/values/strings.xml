@@ -176,4 +176,7 @@
     <string name="title_activity_loggin">Loggin</string>
 
 
+    <string name="registering_message">Registrando</string>
+
+
 </resources>

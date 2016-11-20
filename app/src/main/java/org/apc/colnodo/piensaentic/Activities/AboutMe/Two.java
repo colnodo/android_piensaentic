@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.AlertDialog;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
@@ -25,7 +26,7 @@ public class Two extends Fragment implements View.OnClickListener {
     private LinearLayout mFullContentSpace;
     private TextView mTvName, mTvNickname, mTvEmail, mTvBirthdate;
     private ImageView mImViewFinish;
-    private ActivityFinished mIsFinished;
+    public FragmentBookInterface fragmentBookInterface;
 
 
     private Context mCtx;
@@ -64,7 +65,7 @@ public class Two extends Fragment implements View.OnClickListener {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mIsFinished = (ActivityFinished) mCtx;
+        fragmentBookInterface = (FragmentBookInterface) mCtx;
     }
 
     private void setFields(){
@@ -85,7 +86,7 @@ public class Two extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_protect_your_inf_about2:
-                mIsFinished.activityFinish(true);
+                fragmentBookInterface.finishedActivity(true);
                 break;
             default:
                 break;
@@ -106,7 +107,4 @@ public class Two extends Fragment implements View.OnClickListener {
         }
     }
 
-    public interface ActivityFinished {
-        void activityFinish(boolean isFinished);
-    }
 }

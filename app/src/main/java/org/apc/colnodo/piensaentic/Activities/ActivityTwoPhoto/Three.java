@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
 /**
@@ -22,7 +23,7 @@ public class Three extends Fragment implements View.OnClickListener{
     ImageView mImStep, mImContinue;
 //    TextView mTvTittle;
     private Context mCtx;
-    public org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished mFinished;
+    public FragmentBookInterface fragmentBookInterface;
 
     public Three(){
 
@@ -59,7 +60,7 @@ public class Three extends Fragment implements View.OnClickListener{
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        mFinished = (org.apc.colnodo.piensaentic.Activities.AboutMe.Two.ActivityFinished) context;
+        fragmentBookInterface = (FragmentBookInterface) context;
     }
 
     @Override
@@ -71,7 +72,7 @@ public class Three extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_lets_continue:
-                mFinished.activityFinish(true);
+                fragmentBookInterface.finishedActivity(true);
                 break;
             default:
                 break;

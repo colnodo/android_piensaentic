@@ -14,4 +14,6 @@ public interface FragmentBookInterface {
 
     public void changePagerBackground(int color);
 
+    public void registerUserAccepted();
+
 }
