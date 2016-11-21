@@ -2,6 +2,8 @@
     <string name="app_name">Piensa En Tic</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="start_video">Ver</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fields_required_missing">Aún te faltan campos por diligenciar</string>
     <string name="password">Contraseña:</string>

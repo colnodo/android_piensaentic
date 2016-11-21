@@ -7,7 +7,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,19 +33,31 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-                <VideoView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/videoView" />
-
-                <ImageView
+                <LinearLayout
+                    android:id="@+id/ly_youtube_video_frame"
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/pantalla_33_televisor"
-                    android:id="@+id/imageView12"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"></LinearLayout>
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--app:srcCompat="@drawable/pantalla_33_televisor"-->
+                    <!--android:id="@+id/imageView12"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginBottom="25dp"/>-->
+
+                <Button
+                    android:text="@string/start_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button"
+                    android:layout_gravity="center"/>
+
             </FrameLayout>
         </LinearLayout>
     </ScrollView>
