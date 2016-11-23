@@ -14,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -82,6 +83,22 @@ public class Two extends Fragment implements View.OnClickListener {
         mImButton = (ImageView) view_content.findViewById(R.id.iv_activity2_button);
         mImButton.setImageResource(R.drawable.pantalla_14_bot_revisar);
         mImButton.setOnClickListener(this);
+        mImButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return view;
     }
 

@@ -88,7 +88,7 @@ public class Two extends Fragment {
         int i = 0;
         for (EditText et:mEtArray){
             try{
-                UtilsFunctions.saveSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(i),et.getText().toString());
+                UtilsFunctions.saveSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(i), et.getText().toString());
             } catch (Exception ea){
             }
             i++;

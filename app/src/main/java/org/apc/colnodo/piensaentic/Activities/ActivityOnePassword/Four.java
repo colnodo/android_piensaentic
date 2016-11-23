@@ -3,17 +3,20 @@ package org.apc.colnodo.piensaentic.Activities.ActivityOnePassword;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.media.session.MediaSessionCompat;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apc.colnodo.piensaentic.Activities.AboutMe.*;
 import org.apc.colnodo.piensaentic.Activities.AboutMe.One;
@@ -37,6 +40,7 @@ public class Four extends Fragment implements View.OnClickListener{
     private Context mCtx;
     public FragmentBookInterface mFragmentInterface;
     public FragmentActivityActions mActions;
+    Toast toast;
 
     public Four(){
 
@@ -75,6 +79,22 @@ public class Four extends Fragment implements View.OnClickListener{
         mImCreatePassword = (ImageView)mFragmentContentSpace.findViewById(R.id.im_create_password);
         mImCreatePassword.setImageAlpha(mAlphaButtonOff);
         mImCreatePassword.setClickable(false);
+        mImCreatePassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return view;
     }
 
@@ -84,6 +104,7 @@ public class Four extends Fragment implements View.OnClickListener{
         mActions = (FragmentActivityActions) context;
         mFragmentInterface = (FragmentBookInterface)mCtx;
         mFragmentInterface.isAllowedToContinue(true);
+        toast = new Toast(mCtx);
     }
 
 
@@ -123,10 +144,21 @@ public class Four extends Fragment implements View.OnClickListener{
                 mImCreatePassword.setImageAlpha(mAlphaButtonOn);
                 mImCreatePassword.setClickable(true);
                 mImCreatePassword.setOnClickListener(this);
+                toast.cancel();
+                toast.makeText(mCtx, R.string.next_page, Toast.LENGTH_SHORT).show();
             } else {
                 mImCreatePassword.setImageAlpha(mAlphaButtonOff);
                 mImCreatePassword.setClickable(false);
                 mFragmentInterface.isAllowedToContinue(false);
+                if (passwordConfirm.length()>5) {
+                    if (!password.equals(passwordConfirm)) {
+                        toast.cancel();
+                        toast.makeText(mCtx, R.string.password_not_match, Toast.LENGTH_SHORT).show();
+                    } else if(UtilsFunctions.checkRegEx(password, LocalConstants.PASSWORD_REGEX)){
+                        toast.cancel();
+                        toast.makeText(mCtx, R.string.password_not_match, Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         } catch (Exception ea){
             ea.printStackTrace();
@@ -141,14 +173,8 @@ public class Four extends Fragment implements View.OnClickListener{
             if(UtilsFunctions.getSharedString(mCtx, LocalConstants.USER_PASS)!= null){
                 setFieldsValues();
             }
-//            validatePassword();
-        } //else{
-//            try {
-//
-//            } catch (Exception ea){
-//                ea.printStackTrace();
-//            }
-//        }
+        }
+
     }
 
     @Override

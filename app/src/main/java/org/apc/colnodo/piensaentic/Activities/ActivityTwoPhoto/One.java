@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
@@ -56,6 +58,22 @@ public class One extends Fragment implements  View.OnClickListener{
         mFullContentSpace.addView(view_content);
         mImButton = (ImageView) view_content.findViewById(R.id.iv_activity2_button);
         mImButton.setOnClickListener(this);
+        mImButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return view;
     }
 
@@ -88,6 +106,7 @@ public class One extends Fragment implements  View.OnClickListener{
                     Log.d("PHOTO_PATH", path);
                     if (path != null) {
                         UtilsFunctions.saveSharedString(mCtx, LocalConstants.PHOTO_PATH, path);
+                        Toast.makeText(mCtx, R.string.next_page, Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception ea){
                     ea.printStackTrace();

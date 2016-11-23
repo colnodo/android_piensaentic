@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
@@ -163,6 +164,7 @@ public class One extends Fragment implements View.OnClickListener,
             mFragementBookInterface.isAllowedToContinue(false);
         } else {
             mFragementBookInterface.isAllowedToContinue(true);
+            Toast.makeText(mCtx, R.string.next_page, Toast.LENGTH_SHORT).show();
         }
     }
 

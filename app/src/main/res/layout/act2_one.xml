@@ -26,7 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:srcCompat="@drawable/pantalla_13_bot_examinar"
-                android:id="@+id/iv_activity2_button" />
+                android:id="@+id/iv_activity2_button"
+                android:layout_gravity="bottom" />
         </LinearLayout>
     </ScrollView>
 

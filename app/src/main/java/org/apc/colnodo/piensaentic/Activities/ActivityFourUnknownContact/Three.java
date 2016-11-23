@@ -80,11 +80,13 @@ public class Three extends Fragment {
     }
 
     private void selectLayout() {
-        if (UtilsFunctions.getSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(2))!= null ||
-                UtilsFunctions.getSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(3))!= null){
-            setLayout(2);
+        String alias1 = UtilsFunctions.getSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(2));
+        String alias2 = UtilsFunctions.getSharedString(mContext, LocalConstants.UNKOWN_CONTACT_FIELDS.get(3));
+        if (alias1 != null || alias2 != null){
+            if (alias1.length()>0 || alias2.length()>0) {
+                setLayout(2);
+            } else setLayout(1);
         } else setLayout(1);
-
     }
 
     private void setLayout(int type){

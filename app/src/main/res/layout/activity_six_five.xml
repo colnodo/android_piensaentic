@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_contact_3"
 
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="25dp"
                     style="@style/ActivityTextFieldGreen"/>
 
             </LinearLayout>

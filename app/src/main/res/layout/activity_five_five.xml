@@ -18,8 +18,8 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="-35dp">
 
                 <ImageView
@@ -54,6 +54,7 @@
                     app:srcCompat="@drawable/pantalla_37_contacto"
                     android:id="@+id/imageView14"
                     android:layout_marginTop="20dp"
+                    android:layout_marginRight="-15dp"
                     android:layout_gravity="top|right" />
             </LinearLayout>
 
@@ -61,8 +62,8 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="-30dp">
 
                 <ImageView

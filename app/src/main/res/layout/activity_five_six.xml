@@ -11,14 +11,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <TextView
                 android:text="@string/activityfive6_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView15"
+                android:id="@+id/tv_text"
                 style="@style/ActivityInnerTextFieldTittleWhite"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
@@ -30,13 +31,19 @@
                 app:srcCompat="@drawable/pantalla_38_fantastico"
                 android:id="@+id/imageView16" />
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/pantalla_37_btn_continuar"
-                android:id="@+id/iv_lets_continue"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pantalla_37_btn_continuar"
+                    android:id="@+id/iv_lets_continue"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

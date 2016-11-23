@@ -5,8 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.apc.colnodo.piensaentic.Activities.AboutMe.Two;
 import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
@@ -16,9 +20,12 @@ import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.IndexManagement.Home;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.PiensaEnTic;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
 import java.util.ArrayList;
+
+import static android.R.attr.name;
 
 public class IntroActivity extends AppCompatActivity implements FragmentBookInterface{
 
@@ -26,12 +33,18 @@ public class IntroActivity extends AppCompatActivity implements FragmentBookInte
     private final static String INTRO_ACTIVITY_NAME = "Intro";
     private final static String INTRO_ACTIVITY_BACKGROUND = "intro_fondo";
     private final static String INTRO_ACTIVITY_PAGER_INDICATOR = "select_pager_indicator_red";
+    private Tracker mTracker;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        PiensaEnTic application = (PiensaEnTic) getApplication();
+        mTracker = application.getDefaultTracker();
+        mTracker.setScreenName(INTRO_ACTIVITY_NAME);
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
         startIntroPager();
         if (UtilsFunctions.getSharedBoolean(this, LocalConstants.INTRO_VIEWED)){
             finishedActivity(true);

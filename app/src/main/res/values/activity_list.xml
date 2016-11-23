@@ -12,14 +12,14 @@
     </string-array>
 
     <string-array name="activity_menu_icon_list">
-        <item>vineta_info</item>
+        <item>vineta_sobremi</item>
         <item>vineta_perfil</item>
         <item>vineta_imagen</item>
         <item>vineta_cartera</item>
         <item>vineta_contacto_desconocido</item>
         <item>vineta_encriptar</item>
         <item>vineta_espia</item>
-        <item>vineta_contactenos</item>
+        <item>vineta_info</item>
     </string-array>
 
     <string-array name="activity_background_list">

@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -69,6 +70,22 @@ public class Five extends Fragment implements View.OnClickListener{
         mImCreatePassword = (ImageView)mFragmentContentSpace.findViewById(R.id.im_create_password);
         mImCreatePassword.setImageResource(R.drawable.pantalla_12_continuemos);
         mImCreatePassword.setOnClickListener(this);
+        mImCreatePassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return view;
     }
 

@@ -3,7 +3,11 @@ package org.apc.colnodo.piensaentic.Activities.ActivityFiveEncryption;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,6 +15,7 @@ import android.widget.TextView;
 
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
+import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +49,33 @@ public class Six extends Fragment implements View.OnClickListener {
         mTvValues = new ArrayList<>();
         mView = inflater.inflate(R.layout.activity_five_six, container, false);
         ImageView im = (ImageView)mView.findViewById(R.id.iv_lets_continue);
+        TextView tv = (TextView)mView.findViewById(R.id.tv_text);
+        Spanned tittleString = null;
+        tittleString = Html.fromHtml(getString(R.string.activityfive6_text) +
+                " <br>"+
+                "<FONT COLOR=#fad648><a href=\""+ getString(R.string.activityfive6_link) +"\">"
+                + getString(R.string.activityfive6_link) + "</a></font><br>"
+        );
+        tv.setText(tittleString);
+        tv.setClickable(true);
+        tv.setMovementMethod (LinkMovementMethod.getInstance());
         im.setOnClickListener(this);
+        im.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return mView;
     }
 

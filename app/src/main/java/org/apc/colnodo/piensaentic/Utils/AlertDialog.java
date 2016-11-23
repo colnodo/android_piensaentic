@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 
@@ -32,6 +35,7 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
     private int mType;
     public static List<Pair<String, String>> mMetaTagsList = new ArrayList<>();
     FragmentBookInterface mFragmentInterface;
+    private Tracker mTracker;
 
 
     public AlertDialog(Context context, int dialogType) {
@@ -46,6 +50,8 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
         mCtx = context;
         mType = dialogType;
         mMetaTagsList = list;
+        PiensaEnTic application = (PiensaEnTic) mCtx.getApplicationContext();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override

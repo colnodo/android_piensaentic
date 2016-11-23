@@ -86,6 +86,12 @@ public class Three extends Fragment {
             } catch (Exception ea){
                 ea.printStackTrace();
             }
+        } else {
+            try {
+                chargeValues();
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
         }
     }
 
@@ -96,12 +102,23 @@ public class Three extends Fragment {
             RadioButton rbChecked = (RadioButton) mView.findViewById(rbCheckedId);
             list.add(rbChecked.getText().toString());
         }
-//        if (mEtQuestion6.getText()!= null) {
-//            list.add(mEtQuestion6.getText().toString());
-//        } else {
-//            list.add(" ");
-//        }
         return list;
+    }
+
+    private void chargeValues() {
+        if (UtilsFunctions.getSharedString(mContext, LocalConstants.PHONE_SELECTION)!= null){
+            String pocket = UtilsFunctions.getSharedString(mContext,LocalConstants.PHONE_SELECTION);
+            String[] pocket_list = pocket.split(LocalConstants.SELECTION_SEPARATOR);
+            for (int i = 0; i<=4; i++){
+                for (int j= 1; j<=4; j++){
+                    RadioButton rb = (RadioButton) mRgQuestion.get(i).getChildAt(j);
+                    if (rb.getText().toString().equals(pocket_list[i])){
+                        rb.setChecked(true);
+                        continue;
+                    }
+                }
+            }
+        }
     }
 
 }

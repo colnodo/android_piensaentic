@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.AlertDialog;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.PiensaEnTic;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
 /**
@@ -27,6 +32,8 @@ public class Two extends Fragment implements View.OnClickListener {
     private TextView mTvName, mTvNickname, mTvEmail, mTvBirthdate;
     private ImageView mImViewFinish;
     public FragmentBookInterface fragmentBookInterface;
+
+    private Tracker mTracker;
 
 
     private Context mCtx;
@@ -59,6 +66,22 @@ public class Two extends Fragment implements View.OnClickListener {
         mTvNickname = (TextView) mFullContentSpace.findViewById(R.id.tv_nick_name_about2);
         mTvEmail = (TextView) mFullContentSpace.findViewById(R.id.tv_mail_about2);
         mTvBirthdate = (TextView) mFullContentSpace.findViewById(R.id.tv_birthdate_tittle_about2);
+        mImViewFinish.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        view.setAlpha(0.5f);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        view.setAlpha(1f);
+                    default :
+                        view.setAlpha(1f);
+                }
+                return false;
+            }
+        });
         return view;
     }
 

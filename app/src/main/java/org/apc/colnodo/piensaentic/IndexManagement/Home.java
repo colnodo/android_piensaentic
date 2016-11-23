@@ -19,10 +19,14 @@ import org.apc.colnodo.piensaentic.GenericActivityPager.ActivityManager;
 import org.apc.colnodo.piensaentic.GenericActivityPager.CustomViewPager;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.PiensaEnTic;
 import org.apc.colnodo.piensaentic.Utils.RequestTask;
 import org.apc.colnodo.piensaentic.Utils.ServerRequest;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import io.fabric.sdk.android.Fabric;
 
 import java.util.ArrayList;
@@ -47,6 +51,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
     private ActivityManager mActualFragment;
     private CustomViewPager mViewPager;
     private String mActualActivityName;
+    private Tracker mTracker;
     ProgressDialog loader;
 
     private boolean mAllowedToContinue = true;
@@ -58,6 +63,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
         this.setTheme(R.style.AppTheme);
         setContentView(R.layout.home);
         Fabric.with(this, new Crashlytics());
+        PiensaEnTic application = (PiensaEnTic) getApplication();
+        mTracker = application.getDefaultTracker();
         mIbMenu = (ImageView)findViewById(R.id.iv_hamburguesa);
         mLyMenuContainer = (LinearLayout)findViewById(R.id.ly_right_menu_container);
         mLyMenuContainer.bringToFront();
@@ -97,6 +104,12 @@ public class Home extends AppCompatActivity implements View.OnClickListener,
                 activityActual.mBackground_id, activityActual.mPager_indicator_id);
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_content_home, mActualFragment).commit();
         mActualActivityName = activityActual.mActivity_name;
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Activity")
+                .setAction("Activity Open")
+                .setLabel(mActualActivityName)
+                .build());
     }
 
 

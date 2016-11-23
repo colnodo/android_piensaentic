@@ -39,9 +39,18 @@
         app:srcCompat="@drawable/pantalla_15_fantastico"
         android:id="@+id/imageView5" />
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/pantalla_15_bot_continuar"
-        android:id="@+id/iv_lets_continue" />
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pantalla_15_bot_continuar"
+            android:id="@+id/iv_lets_continue"
+            android:foregroundGravity="bottom"
+            android:layout_gravity="bottom" />
+    </RelativeLayout>
+
 </LinearLayout>

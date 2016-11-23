@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -81,6 +82,22 @@ import java.util.zip.Inflater;
                     mFragmentContentSpace.addView(view1);
                     ImageView im = (ImageView) mFragmentContentSpace.findViewById(R.id.iv_letstart);
                     im.setOnClickListener(this);
+                    im.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                            switch (motionEvent.getAction())
+                            {
+                                case MotionEvent.ACTION_DOWN:
+                                    view.setAlpha(0.5f);
+                                    break;
+                                case MotionEvent.ACTION_UP:
+                                    view.setAlpha(1f);
+                                default :
+                                    view.setAlpha(1f);
+                            }
+                            return false;
+                        }
+                    });
                     break;
                 default:
                     break;

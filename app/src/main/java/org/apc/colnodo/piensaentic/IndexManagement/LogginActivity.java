@@ -9,9 +9,13 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import org.apc.colnodo.piensaentic.Activities.Intro.IntroActivity;
 import org.apc.colnodo.piensaentic.R;
 import org.apc.colnodo.piensaentic.Utils.LocalConstants;
+import org.apc.colnodo.piensaentic.Utils.PiensaEnTic;
 import org.apc.colnodo.piensaentic.Utils.UtilsFunctions;
 
 public class LogginActivity extends Activity {
@@ -19,12 +23,19 @@ public class LogginActivity extends Activity {
     private String mPassword;
     private EditText mEtPassword;
     private Context mCtx;
+    private Tracker mTracker;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPassword = UtilsFunctions.getSharedString(this, LocalConstants.USER_PASS);
+
+        PiensaEnTic application = (PiensaEnTic) getApplication();
+        mTracker = application.getDefaultTracker();
+        mTracker.setScreenName("Loggin");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
         if ( mPassword == null){
             Intent intent = new Intent(this, IntroActivity.class);
             startActivity(intent);

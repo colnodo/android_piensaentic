@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Piensa En Tic</string>
+    <string name="app_name">Piensa en TIC</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
+    <string name="next_page">Ya puedes continuar a la siguiente página</string>
+    <string name="password_not_match">Tus contraseñas no coinciden</string>
+    <string name="password_not_strong">Tu contraseña debe tener números, letras y mínimo 6 caracteres</string>
     <string name="start_video">Ver</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fields_required_missing">Aún te faltan campos por diligenciar</string>
@@ -17,7 +20,7 @@
     <string name="plate">Placa</string>
     <string name="contact">Contacto</string>
     <string name="frecuented_sites">Sitios que frecuenta</string>
-    <string name="dni">Documento de identidad \n Teléfono</string>
+    <string name="dni">Documento de identidad \n o Teléfono</string>
 
     <string name="intro1_tittle">Atrévete a superar retos y dominar la tecnología con actividades útiles
         para enfrentar los riesgos digitales</string>
@@ -28,14 +31,14 @@
     <string name="aboutme_name_hint">Nombre</string>
     <string name="aboutme_nick_name_tittle">Tu nombre de súper heroína/héroe es:</string>
     <string name="aboutme_nick_name_hint">Súper</string>
-    <string name="aboutme_birthdate_tittle">Naciste en:</string>
+    <string name="aboutme_birthdate_tittle">Naciste el:</string>
     <string name="aboutme_birthdate_hint">dd-mm-yyyy</string>
     <string name="aboutme_email_tittle">Tu correo electronico es:</string>
     <string name="aboutme_email_hint">Email</string>
     <string name="aboutme2_nick_name_tittle">de ahora en adelante serás</string>
     <string name="aboutme2_email_tittle">tu correo electrónico es</string>
     <string name="aboutme2_birthdate_tittle">naciste el %1$s de %2$s de %3$s</string>
-    <string name="dialog_treatment_tittle">Colnodo respeta los derechos sobre el manejo de tus datos
+    <string name="dialog_treatment_tittle">Piensa en TIC respeta los derechos sobre el manejo de tus datos
         personales, por favor lee y acepta los Términos y Condiciones para continuar.</string>
     <string name="dialog_treatment_note">* En caso de no aceptar no podrás \n
         seguir usando la aplicacion</string>
@@ -43,14 +46,14 @@
         con ella solo tú podrás editar y ver información privada.</string>
 
     <string name="activityone_tittle">, piensa en una canción o frase que te guste,
-            por ejemplo esta parte de la canción "Cuando te veo" de Choquibtown</string>
+            por ejemplo esta parte de la canción \"Cuando te veo\" de Choquibtown</string>
 
     <string name="activityone2_tittle">Toma las letras iniciales y forma una contraseña súper segura:</string>
 
     <string name="activityone3_tittle">Si quieres hacerla aún más indescifrable, puedes cambiar algunas letras
         por números que se parezcan, por ejemplo la ele (l) por 1, la ese (s) por 5, quedaría así:</string>
 
-    <string name="activityone4_tittle">, ¿ya pensaste tu constraseña? Para hacerla súper segura debe tener números, letras
+    <string name="activityone4_tittle">, ¿ya pensaste tu contraseña? Para hacerla súper segura debe tener números, letras
         y mínimo 6 caracteres </string>
 
     <string name="activityone5_tittle">Esta contraseña es solo tuya!!! No se la digas a nadie ni la escribas en un papel.
@@ -70,8 +73,8 @@
 
     <string name="activitytwo3_tittle">Si deseas conocer más sobre los metadatos puedes consultar estas dos fuentes:</string>
 
-    <string name="activitytwo3_wikipedia">Wikipedia</string>
-    <string name="activitytwo3_ICANN">ICANN</string>
+    <string name="activitytwo3_wikipedia"> \u2022        Wikipedia</string>
+    <string name="activitytwo3_ICANN">\u2022        ICANN</string>
 
     <string name="pick_image_intent_text">Seleccionar fuente de la imagen</string>
 
@@ -107,7 +110,7 @@
 
     <string name="activitythree5_note">Estos consejos prácticos te ayudarán</string>
 
-    <string name="activitythree6_text">Utiliza una constraseña o un patrón para bloquear la pantalla</string>
+    <string name="activitythree6_text">Utiliza una contraseña o un patrón para bloquear la pantalla</string>
     <string name="activitythree7_text">Marca la tarjeta SIM, la tarjeta de memoria, la batería y el teléfono con algo único
             para darte cuenta si te los han cambiado</string>
     <string name="activitythree8_text">No guardes información sensible en tu teléfono sin protegerla con una contraseña</string>
@@ -143,7 +146,7 @@
             Para saber si tus programas de mensajería son buenos puedes consultar</string>
     <string name="activityfive6_link">http://www.eff.org/node/82654</string>
 
-    <string name="activityfive2_share_txt">Encriptando con Piensa En Tic</string>
+    <string name="activityfive2_share_txt">Encriptando con Piensa En TIC</string>
 
     <string name="activitysix1_tittle">Ahora eres espía!</string>
     <string name="activitysix1_text">Mira las fotos que publican algunos de tus contactos y busca lo siguiente</string>
@@ -173,7 +176,7 @@
     <string name="infoscreen_text4">Asociación para el Progreso de las Comunicaciones (APC).</string>
     <string name="infoscreen_text5"> \n \n Tipo de licenciamiento GNU. El código de esta aplicación es abierto y disponible en </string>
     <string name="infoscreen_text6">github.org </string>
-    <string name="loggin">Bienvenido a Piensa En Tic. Por favor ingresa tu contraseña segura.</string>
+    <string name="loggin">Bienvenido a Piensa En TIC. Por favor ingresa tu contraseña segura.</string>
     <string name="loggin_hint">Contraseña</string>
     <string name="title_activity_loggin">Loggin</string>
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ServerRequest {
 
-    private static final String URL = "http://192.168.0.19:8000";
+
     private static final String API = "/api/";
     private static final String REGISTER_USER_VIEW = "register-user/";
     private static final String REGISTER_ACTIVITY_FINISHED_VIEW = "activity-register/";
@@ -19,7 +19,7 @@ public class ServerRequest {
         public RegisterUser(OnRequestCompleted listener, ProgressDialog loader, int taskId, String name,String nick_name,
                             String email, String birthdate, boolean terms_conditions_accepted){
             super(listener, loader, taskId);
-            setUrl(URL + API + REGISTER_USER_VIEW);
+            setUrl(LocalConstants.URL + API + REGISTER_USER_VIEW);
 
             setRequest(getRegisterUser(email, name, nick_name, birthdate, terms_conditions_accepted));
             setResponse(new RegisterUserResponse());
@@ -41,7 +41,7 @@ public class ServerRequest {
     public static class RegisterActivity extends RequestTask{
         public RegisterActivity(OnRequestCompleted listener, int taskId, ActivityRegisterList list ){
             super(listener, taskId);
-            setUrl(URL + API + REGISTER_ACTIVITY_FINISHED_VIEW);
+            setUrl(LocalConstants.URL + API + REGISTER_ACTIVITY_FINISHED_VIEW);
             setRequest(list);
             setResponse(new RegisterActivityResponse());
         }
