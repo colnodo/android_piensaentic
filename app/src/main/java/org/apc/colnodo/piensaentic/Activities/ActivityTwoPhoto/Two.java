@@ -106,20 +106,23 @@ public class Two extends Fragment implements View.OnClickListener {
         String path = UtilsFunctions.getSharedString(mCtx, LocalConstants.PHOTO_PATH);
         if (path!= null) {
             try {
-                final BitmapFactory.Options options = new BitmapFactory.Options();
+                BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inSampleSize = 8;
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                 File file = new File(path);
                 Bitmap src = BitmapFactory.decodeFile(path, options);
-                int height = src.getHeight();
-                int width = src.getWidth();
-                int side = width;
-                if (height < width) {
-                    side = height;
+                if (src != null) {
+                    int height = src.getHeight();
+                    int width = src.getWidth();
+                    int side = width;
+                    if (height < width) {
+                        side = height;
+                    }
+                    Bitmap square = Bitmap.createBitmap(src, 0, 0, side, side);
+                    Bitmap b = Bitmap.createScaledBitmap(square, PHOTO_WIDTH, PHOTO_HEIGHT, false);
+                    ImageView im = (ImageView) mLyFullContentSpace.findViewById(R.id.iv_photo);
+                    im.setImageBitmap(b);
                 }
-                Bitmap square = Bitmap.createBitmap(src, 0, 0, side, side);
-                Bitmap b = Bitmap.createScaledBitmap(square, PHOTO_WIDTH, PHOTO_HEIGHT, false);
-                ImageView im = (ImageView) mLyFullContentSpace.findViewById(R.id.iv_photo);
-                im.setImageBitmap(b);
                 mMetaData = new ExifInterface(file.getAbsolutePath());
                 setMetaTagList();
                 Log.d(TAG, "Image Real Path: " + path);

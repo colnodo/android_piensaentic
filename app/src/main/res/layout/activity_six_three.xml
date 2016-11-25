@@ -94,10 +94,8 @@
                     android:id="@+id/et_contact"
                     android:background="@drawable/pantalla_40_lines2"
                     style="@style/ActivityTextFieldGreen"
-                    android:layout_marginBottom="5dp"/>
-
+                    android:layout_marginBottom="15dp"/>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

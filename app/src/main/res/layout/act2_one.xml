@@ -6,28 +6,34 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:text="@string/activitytwo1_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_act2_tittle"
-                android:layout_margin="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 style="@style/ActivityInnerTextFieldTittleWhite"/>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 app:srcCompat="@drawable/pantalla_13_bot_examinar"
                 android:id="@+id/iv_activity2_button"
-                android:layout_gravity="bottom" />
+                android:layout_marginBottom="20dp" />
+
         </LinearLayout>
     </ScrollView>
 

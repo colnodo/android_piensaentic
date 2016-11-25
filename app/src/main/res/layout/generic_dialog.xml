@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_marginTop="30dp"
-        android:text="@string/dialog_treatment_tittle"
+        android:text="@string/dialog_treatment_tittle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_dialog_tittle"

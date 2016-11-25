@@ -12,6 +12,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <ImageView
@@ -19,6 +20,7 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pantalla_34_titulo"
                 android:id="@+id/imageView11"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"/>
 
             <TextView
@@ -30,17 +32,12 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
 
-            <RelativeLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/pantalla_34_btn_enviar"
-                    android:id="@+id/iv_send_message"
-                    android:layout_marginTop="20dp" />
-            </RelativeLayout>
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_34_btn_enviar"
+                android:id="@+id/iv_send_message"
+                android:layout_marginTop="20dp" />
 
         </LinearLayout>
     </ScrollView>

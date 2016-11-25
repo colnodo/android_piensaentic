@@ -4,6 +4,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -70,6 +73,15 @@ public class AlertDialog extends Dialog implements View.OnClickListener {
 
         switch (mType){
             case LocalConstants.TREATMENT_DIALOG:
+                Spanned tittleString = null;
+                tittleString = Html.fromHtml(mCtx.getString(R.string.dialog_treatment_tittle1)+
+                        " <a href=\""+LocalConstants.URL_TERMS_CONDITION +"\">"
+                        + mCtx.getString(R.string.dialog_treatment_tittle2) + "</a>"
+                        + " " + mCtx.getString(R.string.dialog_treatment_tittle3)
+                );
+                mTvTittle.setText(tittleString);
+                mTvTittle.setClickable(true);
+                mTvTittle.setMovementMethod (LinkMovementMethod.getInstance());
                 mImNoAccept.setOnClickListener(this);
                 mImAccept.setOnClickListener(this);
                 break;

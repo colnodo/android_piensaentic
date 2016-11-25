@@ -38,8 +38,10 @@
     <string name="aboutme2_nick_name_tittle">de ahora en adelante serás</string>
     <string name="aboutme2_email_tittle">tu correo electrónico es</string>
     <string name="aboutme2_birthdate_tittle">naciste el %1$s de %2$s de %3$s</string>
-    <string name="dialog_treatment_tittle">Piensa en TIC respeta los derechos sobre el manejo de tus datos
-        personales, por favor lee y acepta los Términos y Condiciones para continuar.</string>
+    <string name="dialog_treatment_tittle1">Piensa en TIC respeta los derechos sobre el manejo de tus datos
+        personales, por favor lee y acepta los </string>
+    <string name="dialog_treatment_tittle2">Términos y Condiciones </string>
+    <string name="dialog_treatment_tittle3"> para continuar.</string>
     <string name="dialog_treatment_note">* En caso de no aceptar no podrás \n
         seguir usando la aplicacion</string>
     <string name="dialog_create_password_tittle">Crea una contraseña súper segura para proteger tu cuaderno,
@@ -162,7 +164,7 @@
     <string name="activitysix7_choose2">No, lo haré más tarde</string>
 
     <string name="contactscreen_1">Para dejar tus comentarios o calificar ingresa a </string>
-    <string name="contactscreen_2">direccionplaystore.com</string>
+    <string name="contactscreen_2">Piensa en TIC en Play Store</string>
     <string name="contactscreen_3">\n \n Envíanos tus sugerencias y observaciones a </string>
     <string name="contactscreen_4">info@piensatic.co</string>
     <string name="contactscreen_5">\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -31,20 +31,16 @@
                 app:srcCompat="@drawable/pantalla_38_fantastico"
                 android:id="@+id/imageView16" />
 
-            <RelativeLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/pantalla_37_btn_continuar"
-                    android:id="@+id/iv_lets_continue"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center_horizontal" />
-            </RelativeLayout>
-
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pantalla_37_btn_continuar"
+                android:id="@+id/iv_lets_continue"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"/>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+</RelativeLayout>

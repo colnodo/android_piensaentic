@@ -3,6 +3,9 @@ package org.apc.colnodo.piensaentic.Activities.ActivityTwoPhoto;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 
 import org.apc.colnodo.piensaentic.IndexManagement.FragmentBookInterface;
 import org.apc.colnodo.piensaentic.R;
+import org.apc.colnodo.piensaentic.Utils.LocalConstants;
 
 /**
  * Created by apple on 11/12/16.
@@ -52,6 +56,26 @@ public class Three extends Fragment implements View.OnClickListener{
         final View view_content = inflater.inflate(R.layout.activity_two_three, null, false);
         mFragmentContentSpace.removeAllViews();
         mFragmentContentSpace.addView(view_content);
+        TextView textView1 =(TextView)mFragmentContentSpace.findViewById(R.id.textView5);
+        TextView textView2 =(TextView)mFragmentContentSpace.findViewById(R.id.textView3);
+
+        Spanned tittleString = null;
+        tittleString = Html.fromHtml("<FONT COLOR=#ffffff> <a href=\""+ LocalConstants.URL_WIKIPEDIA +"\">"
+                + mCtx.getString(R.string.activitytwo3_wikipedia) + "</a></font>"
+        );
+
+        Spanned tittleString2 = null;
+        tittleString2 = Html.fromHtml("<FONT COLOR=#ffffff><a href=\""+ LocalConstants.URL_ICANN +"\">"
+                + mCtx.getString(R.string.activitytwo3_ICANN) + "</a></font>"
+        );
+
+        textView1.setText(tittleString);
+        textView2.setText(tittleString2);
+        textView1.setClickable(true);
+        textView1.setMovementMethod (LinkMovementMethod.getInstance());
+        textView2.setClickable(true);
+        textView2.setMovementMethod (LinkMovementMethod.getInstance());
+
         mImContinue = (ImageView)mFragmentContentSpace.findViewById(R.id.iv_lets_continue);
         mImContinue.setOnClickListener(this);
         mImContinue.setOnTouchListener(new View.OnTouchListener() {

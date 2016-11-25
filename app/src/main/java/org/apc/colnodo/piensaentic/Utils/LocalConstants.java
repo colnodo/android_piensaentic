@@ -28,6 +28,9 @@ public class LocalConstants {
 
     //URLS
     public static final String PLAY_STORE = "https://play.google.com/store/apps/details?id=org.apc.colnodo.piensaentic&hl=es";
+    public static final String URL_TERMS_CONDITION = "http://colnodo.apc.org/politica_tratamiento_informacion.shtml";
+    public static final String URL_WIKIPEDIA = "https://es.wikipedia.org/wiki/Metadato";
+    public static final String URL_ICANN = "https://icann.org/news/blog/parte-i-que-son-los-metadatos";
     public static final String MAIL = "info@piensaentic.co";
     public static final String DOMINEMOS_TECNOLOGIA = "http://dominemoslatecnologia.org";
     public static final String COLNODO = "http://colnodo.apc.org";
@@ -45,7 +48,7 @@ public class LocalConstants {
 
     //Regular Expresions
     public static final String DATE_REGEX = "(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[012])-((19|20)\\d\\d)";
-    public static final String PASSWORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&]{6,}$";
+    public static final String PASSWORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&_]{6,}$";
     public static final String SELECTION_SEPARATOR = ",";
 
     //Shared Preferences
