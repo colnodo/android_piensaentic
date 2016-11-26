@@ -13,7 +13,7 @@ import java.util.List;
 public class LocalConstants {
 
 
-    public static final String URL = "http://piensaentic.co:8000";
+    public static final String URL = "https://piensaentic.co";
 
     public static final String API_KEY = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
