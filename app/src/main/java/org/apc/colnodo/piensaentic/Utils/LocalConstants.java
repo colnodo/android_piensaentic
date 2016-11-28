@@ -17,7 +17,7 @@ public class LocalConstants {
 
     public static final String API_KEY = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
-    public static final String YOUTUBE_VIDEO_ID = "v0b7g-N9s0g";
+    public static final String YOUTUBE_VIDEO_ID = "KuUWKzD8e00";
 
 
 
