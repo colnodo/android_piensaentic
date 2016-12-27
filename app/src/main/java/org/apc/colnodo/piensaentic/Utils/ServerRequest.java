@@ -14,6 +14,7 @@ public class ServerRequest {
     private static final String API = "/api/";
     private static final String REGISTER_USER_VIEW = "register-user/";
     private static final String REGISTER_ACTIVITY_FINISHED_VIEW = "activity-register/";
+    private static final String PASSWORD_RECOVERY_VIEW = "password-recovery/";
 
     public static class RegisterUser extends RequestTask{
         public RegisterUser(OnRequestCompleted listener, ProgressDialog loader, int taskId, String name,String nick_name,
@@ -44,6 +45,15 @@ public class ServerRequest {
             setUrl(LocalConstants.URL + API + REGISTER_ACTIVITY_FINISHED_VIEW);
             setRequest(list);
             setResponse(new RegisterActivityResponse());
+        }
+    }
+
+    public static class PasswordRecoveryActivity extends RequestTask{
+        public PasswordRecoveryActivity(OnRequestCompleted listener, int taskId, String mail, String password ){
+            super(listener, taskId);
+            setUrl(LocalConstants.URL + API + PASSWORD_RECOVERY_VIEW);
+            setRequest(new PasswordRecoveryModel(mail, password));
+            setResponse(new PasswordRecoveryResponse());
         }
     }
 
@@ -79,5 +89,20 @@ public class ServerRequest {
 
     public static class RegisterActivityResponse{
         public String updated;
+    }
+
+    public static class PasswordRecoveryResponse{
+        public String sent;
+    }
+
+    public static class PasswordRecoveryModel{
+
+        public PasswordRecoveryModel(String mail, String password){
+            user_mail = mail;
+            this.password = password;
+        }
+
+        public String user_mail;
+        public String password;
     }
 }

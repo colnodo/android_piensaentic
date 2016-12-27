@@ -5,8 +5,8 @@
     android:id="@+id/content_loggin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.apc.colnodo.piensaentic.IndexManagement.LogginActivity"
-    tools:showIn="@layout/activity_loggin">
+    android:background="@drawable/intro_fondo"
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,11 +16,11 @@
         android:layout_alignParentStart="true">
 
         <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/logo"
-                android:id="@+id/imageView21"
-                android:layout_marginTop="25dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/intro_logo"
+            android:id="@+id/imageView12" />
 
         <TextView
                 android:text="@string/loggin"
@@ -43,6 +43,18 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/et_loggin"
                 style="@style/ActivityInnerTextFieldEditable"/>
+
+        <TextView
+            android:text="@string/pasword_recovery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pasword_recovery"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/red_active_pager"
+            android:textSize="28sp"
+            android:clickable="true"
+            style="@style/ActivityInnerTextFieldTittle"/>
+
     </LinearLayout>
 
 </RelativeLayout>

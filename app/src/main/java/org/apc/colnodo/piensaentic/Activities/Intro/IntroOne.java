@@ -72,35 +72,38 @@ import java.util.zip.Inflater;
             mTvTittle.setTextColor(mCtx.getResources().getColor(R.color.red_active_pager));
             mFragmentContentSpace.removeAllViews();
             mFragmentContentSpace.addView(view_content);
-            switch (mType){
-                case LocalConstants.INTRO_ONE:
-                    mTvTittle.setText(R.string.intro1_tittle);
-                    break;
-                case LocalConstants.INTRO_TWO:
-                    final View view1 = inflater.inflate(R.layout.image_view, null, false);
-                    mFragmentContentSpace.removeAllViews();
-                    mFragmentContentSpace.addView(view1);
-                    ImageView im = (ImageView) mFragmentContentSpace.findViewById(R.id.iv_letstart);
-                    im.setOnClickListener(this);
-                    im.setOnTouchListener(new View.OnTouchListener() {
-                        @Override
-                        public boolean onTouch(View view, MotionEvent motionEvent) {
-                            switch (motionEvent.getAction())
-                            {
-                                case MotionEvent.ACTION_DOWN:
-                                    view.setAlpha(0.5f);
-                                    break;
-                                case MotionEvent.ACTION_UP:
-                                    view.setAlpha(1f);
-                                default :
-                                    view.setAlpha(1f);
+            try {
+                switch (mType) {
+                    case LocalConstants.INTRO_ONE:
+                        mTvTittle.setText(R.string.intro1_tittle);
+                        break;
+                    case LocalConstants.INTRO_TWO:
+                        final View view1 = inflater.inflate(R.layout.image_view, null, false);
+                        mFragmentContentSpace.removeAllViews();
+                        mFragmentContentSpace.addView(view1);
+                        ImageView im = (ImageView) mFragmentContentSpace.findViewById(R.id.iv_letstart);
+                        im.setOnClickListener(this);
+                        im.setOnTouchListener(new View.OnTouchListener() {
+                            @Override
+                            public boolean onTouch(View view, MotionEvent motionEvent) {
+                                switch (motionEvent.getAction()) {
+                                    case MotionEvent.ACTION_DOWN:
+                                        view.setAlpha(0.5f);
+                                        break;
+                                    case MotionEvent.ACTION_UP:
+                                        view.setAlpha(1f);
+                                    default:
+                                        view.setAlpha(1f);
+                                }
+                                return false;
                             }
-                            return false;
-                        }
-                    });
-                    break;
-                default:
-                    break;
+                        });
+                        break;
+                    default:
+                        break;
+                }
+            } catch (Exception ea){
+                ea.printStackTrace();
             }
             return view;
         }

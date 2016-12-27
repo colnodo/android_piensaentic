@@ -153,10 +153,23 @@ public class Four extends Fragment implements View.OnClickListener{
                 if (passwordConfirm.length()>5) {
                     if (!password.equals(passwordConfirm)) {
                         toast.cancel();
-                        toast.makeText(mCtx, R.string.password_not_match, Toast.LENGTH_SHORT).show();
-                    } else if(UtilsFunctions.checkRegEx(password, LocalConstants.PASSWORD_REGEX)){
+                        try {
+                            if(toast.getView() == null){
+                                toast.makeText(mCtx, R.string.password_not_match, Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception ea){
+                            ea.printStackTrace();
+                        }
+
+                    } else if (UtilsFunctions.checkRegEx(password, LocalConstants.PASSWORD_REGEX)) {
                         toast.cancel();
-                        toast.makeText(mCtx, R.string.password_not_match, Toast.LENGTH_SHORT).show();
+                        try {
+                            if(toast.getView() == null){
+                                toast.makeText(mCtx, R.string.password_not_strong, Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception ea){
+                            ea.printStackTrace();
+                        }
                     }
                 }
             }

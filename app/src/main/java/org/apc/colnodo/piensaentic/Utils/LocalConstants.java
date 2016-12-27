@@ -14,7 +14,7 @@ public class LocalConstants {
 
 
     public static final String URL = "https://piensaentic.co";
-
+    //public static final String URL = "http://192.168.0.20:5050";
     public static final String API_KEY = "50134DF39-D02F-4EBD-34JK3-55KJK3-222JNM";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
     public static final String YOUTUBE_VIDEO_ID = "KuUWKzD8e00";
@@ -24,6 +24,11 @@ public class LocalConstants {
     //Task ID's
     public static final int REGISTER_USER_TASK = 120;
     public static final int REGISTER_ACTIVITY_TASK = 121;
+    public static final int PASSWORD_RECOVERY_TASK = 122;
+
+
+    // Error codes
+    public static final int ERROR_USER_NOT_EXISTS = 400;
 
 
     //URLS

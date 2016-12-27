@@ -165,7 +165,7 @@
 
     <string name="contactscreen_1">Para dejar tus comentarios o calificar ingresa a </string>
     <string name="contactscreen_2">Piensa en TIC en Play Store</string>
-    <string name="contactscreen_3">\n \n Envíanos tus sugerencias y observaciones a </string>
+        <string name="contactscreen_3">\n \n Envíanos tus sugerencias y observaciones a </string>
     <string name="contactscreen_4">info@piensatic.co</string>
     <string name="contactscreen_5">\n \n Conoce más sobre seguridad y derechos en los espacios digitales en \n \n</string>
     <string name="contactscreen_6">http://dominemoslatecnologia.org</string>
@@ -184,6 +184,13 @@
 
 
     <string name="registering_message">Registrando</string>
+    <string name="pasword_recovery">¿Olvidaste tu contraseña?</string>
+    <string name="pasword_recovery_tittle">Escribe tu correo electrónico para recuperar tu contraseña</string>
+    <string name="pasword_recovery_action">Enviar solicitud</string>
+    <string name="invalid_mail">Mail inválido</string>
+    <string name="password_recovery_sent">Se ha enviado tu contraseña a tu correo</string>
+    <string name="user_not_exists">Email no existe</string>
+    <string name="empty_mail">El campo contraseña no puede estar vacío</string>
 
 
 </resources>

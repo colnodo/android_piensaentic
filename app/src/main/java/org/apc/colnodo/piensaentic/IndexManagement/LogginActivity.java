@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -24,6 +26,7 @@ public class LogginActivity extends Activity {
     private EditText mEtPassword;
     private Context mCtx;
     private Tracker mTracker;
+    private TextView mTvPasswordRecovery;
 
 
     @Override
@@ -41,10 +44,19 @@ public class LogginActivity extends Activity {
             startActivity(intent);
             this.finish();
         }
-        setContentView(R.layout.activity_loggin);
+        setContentView(R.layout.content_loggin);
         mCtx = this;
+        mTvPasswordRecovery = (TextView)findViewById(R.id.pasword_recovery);
         mEtPassword = (EditText)findViewById(R.id.et_loggin);
         mEtPassword.addTextChangedListener(mTextWatcher);
+
+        mTvPasswordRecovery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LogginActivity.this, PasswordRecovery.class);
+                startActivity(intent);
+            }
+        });
 
         }
 
