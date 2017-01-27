@@ -17,6 +17,9 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+
+
+
     <style name="ActivityTextItemSelected" parent="android:Widget.TextView">
         <item name="android:textColor">@color/blue_active_pager</item>
         <item name="android:paddingLeft">5dp</item>
